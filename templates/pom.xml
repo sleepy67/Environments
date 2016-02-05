@@ -13,12 +13,10 @@
     <groupId>net.atos.tfc.configuration</groupId>
     <artifactId>templates</artifactId>
     <version>0.0.0.1-SNAPSHOT</version>
-    <name>templates</name>
     <description>Configuration templates for all TFC projects</description>
     <packaging>pom</packaging>
 
     <build>
-        <finalName>deployment-templates</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
