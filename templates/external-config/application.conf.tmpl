@@ -1,0 +1,33 @@
+play.crypto.secret = "Z2TAxoKapghea7]G0F4VJHdPG>NYwWdquAsoPJh`aB_11[kWFCQD4]yrrNMf@BBn"
+
+
+# The application languages
+play.i18n.langs = ["en", "cy"]
+
+play.http.session.cookieName = "TaxFreeChildcare"
+
+paraccuserid.sessionTimeout = 3600000
+parappuserid.sessionTimeout = 3600000
+ccpaccuserids.sessionTimeout = 3600000
+ccpsignupuserid.sessionTimeout = 3600000
+
+
+TFCC{
+  MicroServicesURL = {{TFC.Portal.MicroServices.URL}}
+  UserServicesURL = "http://tfc-user-admin.atos.io:80"
+  LinuxInstallLocation = "/appl/tfc/portal"
+  RPM.packageName = "tfc-portal"
+  Publish.Repository = "http://nexus.tfcc.virtualsi.uk/"
+  IPWhiteList = {{TFC.Portal.IP.WhiteList}}
+  Port = {{TFC.Portal.Bind.Port}}
+  Address = {{TFC.Portal.Bind.Address}}
+  NoLogin = false
+  IgnoreSession = false
+}
+
+play.modules {
+  enabled += "play.filters.csrf.CSRFModule"
+  enabled += "play.filters.cors.CORSModule"
+  enabled += "play.filters.headers.SecurityHeadersModule"
+  enabled += "play.filters.gzip.GzipFilterModule"
+}
