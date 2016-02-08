@@ -154,6 +154,7 @@
         <filters>
             <filter>${config.env}_environment.properties</filter>
             <filter>${config.env}_application.conf</filter>
+            <filter>${config.env}_ccpimport.properties</filter>
         </filters>
     </build>
 

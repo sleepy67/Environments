@@ -17,5 +17,9 @@
             <outputDirectory></outputDirectory>
             <source>CI/CI_application.conf</source>
         </file>
+        <file>
+            <outputDirectory></outputDirectory>
+            <source>CI/CI_ccpimport.properties</source>
+        </file>
     </files>
 </assembly>
