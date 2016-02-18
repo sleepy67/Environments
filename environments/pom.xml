@@ -35,6 +35,7 @@
                                 <descriptor>assembly/CI_env.xml</descriptor>
                                 <descriptor>assembly/PROD_env.xml</descriptor>
                                 <descriptor>assembly/T_SIT_env.xml</descriptor>
+                                <descriptor>assembly/DEV_env.xml</descriptor>
                             </descriptors>
                         </configuration>
                     </execution>
