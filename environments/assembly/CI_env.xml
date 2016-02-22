@@ -21,5 +21,9 @@
             <outputDirectory></outputDirectory>
             <source>CI/CI_ccpimport.properties</source>
         </file>
+        <file>
+            <outputDirectory></outputDirectory>
+            <source>CI/CI_mockservice.conf</source>
+        </file>
     </files>
 </assembly>

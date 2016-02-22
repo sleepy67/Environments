@@ -1,0 +1,24 @@
+akka {
+    loglevel = INFO
+
+    log-config-on-start = off
+
+    actor.debug {
+        # enable function of LoggingReceive, which is to log any received message at DEBUG level
+        receive = on
+
+        # enable DEBUG logging of all AutoReceiveMessages (Kill, PoisonPill and the like)
+        autoreceive = on
+
+        # enable DEBUG logging of actor lifecycle changes
+        lifecycle = on
+    }
+}
+TFCC.LinuxInstallLocation = "/appl/tfc/tfc-mockservice"
+TFCC.RPM.packageName = "tfc-mockservice"
+TFCC.Publish.Repository = "http://nexus.tfcc.virtualsi.uk/"
+
+http {
+    port = "{{TFC.Mockservice.Port}}"
+    address = "{{TFC.Mockservice.Address}}"
+}

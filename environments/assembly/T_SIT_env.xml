@@ -21,5 +21,9 @@
             <outputDirectory></outputDirectory>
             <source>T_SIT/T_SIT_ccpimport.properties</source>
         </file>
+        <file>
+            <outputDirectory></outputDirectory>
+            <source>T_SIT/T_SIT_mockservice.conf</source>
+        </file>
     </files>
 </assembly>

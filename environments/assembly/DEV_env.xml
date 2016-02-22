@@ -21,5 +21,9 @@
             <outputDirectory></outputDirectory>
             <source>DEV/DEV_ccpimport.properties</source>
         </file>
+        <file>
+            <outputDirectory></outputDirectory>
+            <source>DEV/DEV_mockservice.conf</source>
+        </file>
     </files>
 </assembly>
