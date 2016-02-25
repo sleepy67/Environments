@@ -156,6 +156,7 @@
             <filter>${config.env}_application.conf</filter>
             <filter>${config.env}_ccpimport.properties</filter>
             <filter>${config.env}_mockservice.conf</filter>
+            <filter>${config.env}_ext-services-mock.properties</filter>
         </filters>
     </build>
 

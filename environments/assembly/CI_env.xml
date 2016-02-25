@@ -25,5 +25,9 @@
             <outputDirectory></outputDirectory>
             <source>CI/CI_mockservice.conf</source>
         </file>
+        <file>
+            <outputDirectory></outputDirectory>
+            <source>CI/CI_ext-services-mock.properties</source>
+        </file>
     </files>
 </assembly>

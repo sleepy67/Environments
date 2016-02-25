@@ -25,5 +25,9 @@
             <outputDirectory></outputDirectory>
             <source>T_SIT/T_SIT_mockservice.conf</source>
         </file>
+        <file>
+            <outputDirectory></outputDirectory>
+            <source>T_SIT/T_SIT_ext-services-mock.properties</source>
+        </file>
     </files>
 </assembly>
