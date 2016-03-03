@@ -4,6 +4,12 @@ TFC.DB.OracleUsername={{TFC.DB.OracleUsername}}
 TFC.DB.OraclePassword={{TFC.DB.OraclePassword}}
 TFC.DB.DriverType={{TFC.DB.DriverType}}
 webservice.ipandport={{TFC.DB.WebServiceIPAndPort}}
+TFC.Website.Session.Timeout={{TFC.Website.Session.Timeout}}
+
+#********* Email and Postcode REGEX Patterns **************
+postcode.pattern={{TFC.postcode.pattern}}
+email.pattern={{TFC.email.pattern}}
+psswrd.pattern={{TFC.psswrd.pattern}}
 
 #**********BankValidationServices Configuration***********
 postcodeanywhere.key={{TFC.PostCodeAnywhereKey}}
@@ -30,6 +36,19 @@ ccpsignup.restservice.url={{TFC.CCPSignup.RestService.URL}}
 #*************** CCPAccountIntegrationService ***********
 ccpaccount.restservice.url={{TFC.CCPAccount.RestService.URL}}
 
+
+#*************** AMQ Config ********************
 amq.brokerurl={{TFC.AMQ.Broker.URL}}
 amq.password={{TFC.AMQ.Password}}
 amq=username={{TFC.AMQ.Username}}
+
+#*************** CCP Activation Config ********************
+ccpactivation.amq.queuename={{TFC.ccpactivation.amq.queuename}}
+
+#*************** JOB SCHEDULES ********************
+ job.cleansession.cron={{TFC.job.cleansession.cron}}
+ job.declinedutrninoletter.cron={{TFC.job.declinedutrninoletter.cron}}
+ job.activateccp.cron={{TFC.job.activateccp.cron}}
+
+
+
