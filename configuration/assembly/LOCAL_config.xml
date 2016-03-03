@@ -13,5 +13,10 @@
             <directory>LOCAL_config</directory>
             <useDefaultExcludes>true</useDefaultExcludes>
         </fileSet>
+        <fileSet>
+            <outputDirectory></outputDirectory>
+            <directory>project_files</directory>
+            <useDefaultExcludes>true</useDefaultExcludes>
+        </fileSet>
     </fileSets>
 </assembly>

@@ -1,0 +1,27 @@
+[
+  {
+    "code": "0001",
+    "details": "Bank Account Declined",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0002",
+    "details": "Bank Account Not Validated",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0003",
+    "details": "Bank Account Error",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0004",
+    "details": "No CCP Contact Found",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0005",
+    "details": "Unable to determine next page",
+    "summary": "Bad-Request"
+  }
+]
