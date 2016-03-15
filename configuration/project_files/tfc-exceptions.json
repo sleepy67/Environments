@@ -23,5 +23,45 @@
     "code": "0005",
     "details": "Unable to determine next page",
     "summary": "Bad-Request"
+  },
+  {
+    "code": "0006",
+    "details": "Unique Taxpayer Reference Declined",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0007",
+    "details": "Invalid email",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0008",
+    "details": "Emails do not match",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0009",
+    "details": "National Insurance Number Declined",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0010",
+    "details": "Invalid password",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0011",
+    "details": "Passwords do not match",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0012",
+    "details": "No CCP Found",
+    "summary": "Bad-Request"
+  },
+  {
+    "code": "0013",
+    "details": "UTR or NINO Verification Error",
+    "summary": "Bad-Request"
   }
 ]
