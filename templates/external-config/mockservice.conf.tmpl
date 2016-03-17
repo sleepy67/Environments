@@ -22,3 +22,17 @@ http {
     port = "{{TFC.Mockservice.Port}}"
     address = "{{TFC.Mockservice.Address}}"
 }
+
+trueService {
+    host = {{TFC.Mockservice.TrueService.host}}
+    port = {{TFC.Mockservice.TrueService.port}}
+    cic = {{TFC.Mockservice.TrueService.cic}}
+    ccp {
+        signup = {{TFC.Mockservice.TrueService.ccp.signup}}
+        acc = {{TFC.Mockservice.TrueService.ccp.acc}}
+    }
+    par {
+        app = {{TFC.Mockservice.TrueService.par.app}}
+        acc = {{TFC.Mockservice.TrueService.par.acc}}
+    }
+    }
