@@ -1,67 +1,109 @@
-[
-  {
-    "code": "0001",
-    "details": "Bank Account Declined",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0002",
-    "details": "Bank Account Not Validated",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0003",
-    "details": "Bank Account Error",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0004",
-    "details": "No CCP Contact Found",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0005",
-    "details": "Unable to determine next page",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0006",
-    "details": "Unique Taxpayer Reference Declined",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0007",
-    "details": "Invalid email",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0008",
-    "details": "Emails do not match",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0009",
-    "details": "National Insurance Number Declined",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0010",
-    "details": "Invalid password",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0011",
-    "details": "Passwords do not match",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0012",
-    "details": "No CCP Found",
-    "summary": "Bad-Request"
-  },
-  {
-    "code": "0013",
-    "details": "UTR or NINO Verification Error",
-    "summary": "Bad-Request"
-  }
-]
+[{
+  "code": "0001",
+  "details": {},
+  "summary": "Bank Account Error"
+}, {
+  "code":"0002",
+  "details": {},
+  "summary": "The rsa phone number challenge has not yet completed"
+}, {
+  "code":"0003",
+  "details": {},
+  "summary": "One or more of the security answers do not match the expected format. Details contains the ones that are invalid."
+}, {
+  "code":"0004",
+  "details": {},
+  "summary": "The signup code entered is invalid."
+}, {
+  "code":"0005",
+  "details": {},
+  "summary": "This signup code has already been registered."
+}, {
+  "code":"0006",
+  "details": {},
+  "summary": "This postcode does not match the signup code entered."
+}, {
+  "code":"0007",
+  "details": {},
+  "summary": "The format of the RSA question is invalid."
+}, {
+  "code":"0008",
+  "details": {},
+  "summary": "Insufficient funds in account"
+}, {
+  "code":"0009",
+  "details": {},
+  "summary": "No ccp with that postcode could be found."
+}, {
+  "code":"0010",
+  "details": {},
+  "summary": "Username is invalid"
+}, {
+  "code":"0011",
+  "details": {},
+  "summary": "Password is invalid"
+}, {
+  "code": "0012",
+  "details": {},
+  "summary": "Bank Account Declined"
+}, {
+  "code": "0013",
+  "details": {},
+  "summary": "Bank Account Not Validated"
+}, {
+  "code": "0014",
+  "details": {},
+  "summary": "No CCP Contact Found"
+}, {
+  "code": "0015",
+  "details": {},
+  "summary": "Unable to determine next page"
+}, {
+  "code": "0016",
+  "details": {},
+  "summary": "Unique Taxpayer Reference Declined"
+}, {
+  "code": "0017",
+  "details": {},
+  "summary": "Invalid email"
+}, {
+  "code": "0018",
+  "details": {},
+  "summary": "Emails do not match"
+}, {
+  "code": "0019",
+  "details": {},
+  "summary": "National Insurance Number Declined"
+}, {
+  "code": "0020",
+  "details": {},
+  "summary": "Passwords do not match"
+}, {
+  "code":"0021",
+  "details": {},
+  "summary": "No CCP Found"
+}, {
+  "code":"0022",
+  "details": {},
+  "summary": "UTR or NINO Verification Error"
+}, {
+  "code":"0023",
+  "details": {},
+  "summary": "Password Reset Failed"
+}, {
+  "code":"0024",
+  "details": {},
+  "summary": "Password Change Failed"
+}, {
+  "code":"0025",
+  "details": {},
+  "summary": "RSA Error"
+}, {
+  "code":"0026",
+  "details": {},
+  "summary": "Feedback missing satisfaction rating"
+}, {
+  "code":"0027",
+  "details": {},
+  "summary": "Feedback comment exceeds maximum length"
+}]
