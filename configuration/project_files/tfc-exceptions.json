@@ -106,4 +106,12 @@
   "code":"0027",
   "details": {},
   "summary": "Feedback comment exceeds maximum length"
+}, {
+  "code":"0028",
+  "details": {},
+  "summary": "Forgot UCR Thaler Output Failed"
+}, {
+  "code":"0029",
+  "details": {},
+  "summary": "Retrieve Main Contact Details Failed"
 }]
