@@ -19,7 +19,15 @@
         </file>
         <file>
             <outputDirectory></outputDirectory>
+            <source>DEV/DEV_application-cic.conf</source>
+        </file>
+        <file>
+            <outputDirectory></outputDirectory>
             <source>DEV/DEV_ccpimport.properties</source>
+        </file>
+        <file>
+            <outputDirectory></outputDirectory>
+            <source>DEV/DEV_cic.conf</source>
         </file>
         <file>
             <outputDirectory></outputDirectory>

@@ -1,0 +1,38 @@
+# CIC application configuration
+# Secret key
+# ~~~~~
+# The secret key is used to secure cryptographics functions.
+# If you deploy your application to several instances be sure to use the same key!
+play.crypto.secret = "Z2TAxoKapghea7]G0F4VJHdPG>NYwWdquAsoPJh`aB_11[kWFCQD4]yrrNMf@BBn"
+
+
+# The application languages
+play.i18n.langs = ["en", "cy"]
+
+#Session information
+play.http.session.cookieName = "TaxFreeChildcare"
+#Session timeout in milliseconds
+csrid.sessionTimeout = 3600000
+
+http {
+port = {{TFC.CIC.App.Port}}
+}
+
+TFCC {
+  MicroServicesURL = {{TFC.CIC.MicroServices.URL}}
+  UserServicesURL = "http://tfc-user-admin.atos.io:80" // External user login service. Used if NoLogin = false
+  LinuxInstallLocation = "/appl/tfc/cic"
+  RPM.packageName = "tfc-cic"
+  Publish.Repository = "http://nexus.tfcc.virtualsi.uk/"
+  CICBetaURL = "http://{{TFC.CIC.App.Address}}:{{TFC.CIC.App.Port}}" // Local running
+  Port = "{{TFC.CIC.App.Port}}"
+  Address = "{{TFC.CIC.App.Address}}"
+  IgnoreSession = {{TFC.CIC.Ignore.Session}}
+}
+
+play.modules {
+  enabled += "play.filters.csrf.CSRFModule"
+  enabled += "play.filters.cors.CORSModule"
+  enabled += "play.filters.headers.SecurityHeadersModule"
+  enabled += "play.filters.gzip.GzipFilterModule"
+}

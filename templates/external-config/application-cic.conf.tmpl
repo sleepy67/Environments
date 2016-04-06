@@ -1,4 +1,4 @@
-# tfc-portal application configuration
+# tfc-portal application configuration for CIC Build
 play.crypto.secret = "Z2TAxoKapghea7]G0F4VJHdPG>NYwWdquAsoPJh`aB_11[kWFCQD4]yrrNMf@BBn"
 
 
@@ -14,16 +14,16 @@ ccpsignupuserid.sessionTimeout = 3600000
 
 
 TFCC{
-  MicroServicesURL = {{TFC.Portal.MicroServices.URL}}
+  MicroServicesURL = {{TFC.Portal.CIC.MicroServices.URL}}
   UserServicesURL = "http://tfc-user-admin.atos.io:80"
   LinuxInstallLocation = "/appl/tfc/portal"
   RPM.packageName = "tfc-portal"
   Publish.Repository = "http://nexus.tfcc.virtualsi.uk/"
-  IPWhiteList = {{TFC.Portal.IP.WhiteList}}
-  Port = {{TFC.Portal.Bind.Port}}
-  Address = {{TFC.Portal.Bind.Address}}
-  NoLogin = {{TFC.Portal.NoLogin}}
-  IgnoreSession = {{TFC.Portal.Ignore.Session}}
+  IPWhiteList = {{TFC.Portal.CIC.IP.WhiteList}}
+  Port = {{TFC.Portal.CIC.Bind.Port}}
+  Address = {{TFC.Portal.CIC.Bind.Address}}
+  NoLogin = {{TFC.Portal.CIC.NoLogin}}
+  IgnoreSession = {{TFC.Portal.CIC.Ignore.Session}}
 }
 
 play.modules {

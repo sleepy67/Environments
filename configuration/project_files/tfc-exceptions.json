@@ -114,4 +114,28 @@
   "code":"0029",
   "details": {},
   "summary": "Retrieve Main Contact Details Failed"
+}, {
+  "code":"0030",
+  "details": {},
+  "summary": "Registered Status Code from Thaler not recognised"
+},{
+  "code":"0031",
+  "details": {},
+  "summary": "CSR1 Operator failed to handover correctly."
+}, {
+  "code":"0032",
+  "details": {},
+  "summary": "Send Temporary Password action failed. Authenticated postcode is different from the saved postcode."
+}, {
+  "code":"0033",
+  "details": {},
+  "summary": "Send Signup Letter action failed. Authenticated postcode is different from the saved postcode."
+}, {
+  "code":"0034",
+  "details": {},
+  "summary": "Login Failed. Invalid CSR credentials."
+}, {
+  "code":"9999",
+  "details": {},
+  "summary": "Unhandled System Error"
 }]

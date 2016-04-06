@@ -154,6 +154,8 @@
         <filters>
             <filter>${config.env}_environment.properties</filter>
             <filter>${config.env}_application.conf</filter>
+            <filter>${config.env}_application-cic.conf</filter>
+            <filter>${config.env}_cic.conf</filter>
             <filter>${config.env}_ccpimport.properties</filter>
             <filter>${config.env}_mockservice.conf</filter>
             <filter>${config.env}_ext-services-mock.properties</filter>

@@ -19,6 +19,14 @@
         </file>
         <file>
             <outputDirectory></outputDirectory>
+            <source>T_SIT/T_SIT_application-cic.conf</source>
+        </file>
+        <file>
+            <outputDirectory></outputDirectory>
+            <source>T_SIT/T_SIT_cic.conf</source>
+        </file>
+        <file>
+            <outputDirectory></outputDirectory>
             <source>T_SIT/T_SIT_ccpimport.properties</source>
         </file>
         <file>
