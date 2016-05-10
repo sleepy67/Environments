@@ -3,9 +3,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>net.atos.tfc</groupId>
-        <artifactId>environments</artifactId>
-        <version>1.0.0.0-SNAPSHOT</version>
+        <groupId>net.atos.tfc.environments</groupId>
+        <artifactId>environments-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <artifactId>sit-one</artifactId>
