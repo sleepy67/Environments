@@ -20,7 +20,9 @@
             <type>zip</type>
         </dependency>
     </dependencies>
-
+    <properties>
+        <env>pt-two</env>
+    </properties>
     <build>
         <plugins>
             <plugin>
@@ -51,73 +53,24 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jar-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>default-jar</id>
-                        <phase/>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
-                <configuration>
-                    <encoding>UTF-8</encoding>
-                    <delimiters>
-                        <delimiter>${*}</delimiter>
-                        <delimiter>{{*}}</delimiter>
-                    </delimiters>
-                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-antrun-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>run-ant-rename-template</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                        <configuration>
-                            <target>
-                                <move todir="${project.basedir}/pt-two/">
-                                    <fileset dir="${project.basedir}/pt-two/">
-                                        <include name="**/*.tmpl"/>
-                                    </fileset>
-                                    <mapper>
-                                        <mapper type="regexp" from="(.*)\.tmpl" to="\1"/>
-                                    </mapper>
-                                </move>
-                            </target>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>create-distribution</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <appendAssemblyId>false</appendAssemblyId>
-                            <descriptors>
-                                <descriptor>assembly/config.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
         <resources>
             <resource>
                 <directory>config</directory>
-                <targetPath>${project.basedir}/pt-two</targetPath>
+                <targetPath>${project.basedir}/${env}</targetPath>
                 <filtering>true</filtering>
             </resource>
         </resources>
