@@ -13,10 +13,9 @@
     <description>Prod/Test Two external configuration</description>
     <dependencies>
         <dependency>
-            <groupId>net.atos.tfc</groupId>
+            <groupId>net.atos.tfc.environments</groupId>
             <artifactId>templates</artifactId>
-            <version>1.0.0.0-SNAPSHOT</version>
-            <classifier>config</classifier>
+            <version>0.0.1-SNAPSHOT</version>
             <type>zip</type>
         </dependency>
     </dependencies>
@@ -38,9 +37,9 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>net.atos.tfc</groupId>
+                                    <groupId>net.atos.tfc.environments</groupId>
                                     <artifactId>templates</artifactId>
-                                    <version>1.0.0.0-SNAPSHOT</version>
+                                    <version>0.0.1-SNAPSHOT</version>
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.basedir}</outputDirectory>
