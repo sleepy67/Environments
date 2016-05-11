@@ -3,8 +3,10 @@
 TFC.DB.OracleHost={{TFC.DB.OracleHost}}
 TFC.DB.OracleUsername={{TFC.DB.OracleUsername}}
 TFC.DB.OraclePassword={{TFC.DB.OraclePassword}}
+TFC.DB.Audit.OracleUsername={{TFC.DB.Audit.OracleUsername}}
+TFC.DB.Audit.OraclePassword={{TFC.DB.Audit.OraclePassword}}
 TFC.DB.DriverType={{TFC.DB.DriverType}}
-webservice.ipandport={{TFC.DB.WebServiceIPAndPort}}
+webservice.ipandport={{TFC.DB.webservice.ipandport}}
 TFC.Website.Session.Timeout={{TFC.Website.Session.Timeout}}
 
 #********* Email and Postcode REGEX Patterns **************
@@ -13,48 +15,61 @@ email.pattern=^(?=.{0,56}$).(\"([^\"r\\\\]|\\\\[\"r\\\\])*\"|([-a-zA-Z0-9!#$%&'*
 psswrd.pattern={{TFC.psswrd.pattern}}
 
 #**********BankValidationServices Configuration***********
-postcodeanywhere.key={{TFC.PostCodeAnywhereKey}}
-postcodeanywhere.url={{TFC.PostCodeAnywhereURL}}
+postcodeanywhere.key={{TFC.postcodeanywhere.key}}
+postcodeanywhere.url={{TFC.postcodeanywhere.url}}
 
 #*************** HMRCServices Configuration************
 
-hmrc.incomingq.brokerurl={{TFC.HMRC.IQ.Broker.URL}}
-hmrc.incomingq.username={{TFC.HMRC.IQ.Broker.Username}}
-hmrc.incomingq.password={{TFC.HMRC.IQ.Broker.Password}}
+hmrc.incomingq.brokerurl={{TFC.hmrc.incomingq.brokerurl}}
+hmrc.incomingq.username={{TFC.hmrc.incomingq.username}}
+hmrc.incomingq.password={{TFC.hmrc.incomingq.password}}
 
 #*************** Thaler Config ************************
 #**URLs**
-thaler.url={{TFC.Thaler.URL}}
-
+thaler.url={{TFC.thaler.url}}
+thaler.externalapplication={{TFC.thaler.externalapplication}}
+thaler.externalreferenceprefix={{TFC.thaler.externalreferenceprefix}}
+thaler.password={{TFC.thaler.password}}
+thaler.username={{TFC.thaler.username}}
 #*************** RSA Services Config ************************
-rsa.organisation.id={{TFC.RSA.OrganisationId}}
-rsa.organisation.pwd={{TFC.RSA.OrganisationPWD}}
-rsa.url={{TFC.RSA.URL}}
+rsa.organisation.id={{TFC.rsa.organisation.id}}
+rsa.organisation.pwd={{TFC.rsa.organisation.pwd}}
+rsa.url={{TFC.rsa.url}}
 
 #*************** CCPSignupIntegrationService ***********
-ccpsignup.restservice.url={{TFC.CCPSignup.RestService.URL}}
+ccpsignup.restservice.url={{TFC.ccpsignup.restservice.url}}
 
 #*************** CCPAccountIntegrationService ***********
-ccpaccount.restservice.url={{TFC.CCPAccount.RestService.URL}}
+ccpaccount.restservice.url={{TFC.ccpaccount.restservice.url}}
 
 #*************** CIC Services ***********
-cic.restservice.url={{TFC.CIC.RestService.URL}}
+cicsearch.maxresults={{TFC.cicsearch.maxresults}}
+cic.restservice.url={{TFC.cic.restservice.url}}
+cicccpaccount.restservice.url={{TFC.cicccpaccount.restservice.url}}
 
 #*************** AMQ Config ********************
-amq.brokerurl={{TFC.AMQ.Broker.URL}}
-amq.password={{TFC.AMQ.Password}}
-amq.username={{TFC.AMQ.Username}}
+amq.brokerurl={{TFC.amq.brokerurl}}
+amq.pword={{TFC.amq.pword}}
+amq.username={{TFC.amq.username}}
 
+#*********************************************************
+primarycontactactivation.maxretries = {{TFC.primarycontactactivation.maxretries}}
 #*************** CCP Activation Config ********************
 ccpactivation.amq.queuename={{TFC.ccpactivation.amq.queuename}}
 
 #*************** JOB SCHEDULES ********************
- job.cleansession.cron={{TFC.job.cleansession.cron}}
- job.declinedutrninoletter.cron={{TFC.job.declinedutrninoletter.cron}}
- job.activateccp.cron={{TFC.job.activateccp.cron}}
 
 #*************** ERROR MESSAGES FILE ********************
 net.atos.tfc.services.common.exceptions.file={{TFC.exceptions.json.file}}
+
+net.atos.tfc.authentication.service.csr={{TFC.net.atos.tfc.authentication.service.csr}}
+net.atos.tfc.authentication.service.ldap.factory={{TFC.net.atos.tfc.authentication.service.ldap.factory}}
+net.atos.tfc.authentication.service.ldap.auth.type={{TFC.net.atos.tfc.authentication.service.ldap.auth.type}}
+net.atos.tfc.authentication.service.ldap.base.user.dn={{TFC.net.atos.tfc.authentication.service.ldap.base.user.dn}}
+net.atos.tfc.authentication.service.ldap.uid.attr={{TFC.net.atos.tfc.authentication.service.ldap.uid.attr}}
+net.atos.tfc.authentication.service.ldap.admin.dn={{TFC.net.atos.tfc.authentication.service.ldap.admin.dn}}
+net.atos.tfc.authentication.service.ldap.admin.password={{TFC.net.atos.tfc.authentication.service.ldap.admin.password}}
+net.atos.tfc.authentication.service.ldap.server={{TFC.net.atos.tfc.authentication.service.ldap.server}}
 
 #*********** AUDITING Framework client QUEUE ******************
 audit.amq.brokerurl={{TFC.audit.amq.brokerurl}}
