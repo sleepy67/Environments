@@ -13,6 +13,11 @@ ccpaccuserids.sessionTimeout = 3600000
 ccpsignupuserid.sessionTimeout = 3600000
 
 
+http {
+  address = {{TFC.Portal.Bind.Address}}
+  port = {{TFC.Portal.Bind.Port}}
+}
+
 TFCC{
   MicroServicesURL = {{TFC.Portal.CIC.MicroServices.URL}}
   UserServicesURL = "http://tfc-user-admin.atos.io:80"
@@ -20,10 +25,9 @@ TFCC{
   RPM.packageName = "tfc-portal"
   Publish.Repository = "http://nexus.tfcc.virtualsi.uk/"
   IPWhiteList = {{TFC.Portal.CIC.IP.WhiteList}}
-  Port = {{TFC.Portal.CIC.Bind.Port}}
-  Address = {{TFC.Portal.CIC.Bind.Address}}
   NoLogin = {{TFC.Portal.CIC.NoLogin}}
   IgnoreSession = {{TFC.Portal.CIC.Ignore.Session}}
+  RSAOn = {{TFC.Portal.RSA}}
 }
 
 play.modules {

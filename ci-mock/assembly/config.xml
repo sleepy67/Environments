@@ -1,7 +1,7 @@
 <assembly xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.3 http://maven.apache.org/xsd/assembly-1.1.3.xsd">
-    <id>pt-one</id>
+    <id>ci-mock</id>
     <formats>
         <format>zip</format>
     </formats>
@@ -10,10 +10,11 @@
     <fileSets>
         <fileSet>
             <outputDirectory></outputDirectory>
-            <directory>pt-one</directory>
+            <directory>ci-mock</directory>
             <useDefaultExcludes>true</useDefaultExcludes>
             <excludes>
-                <exclude>mockservice.conf</exclude>
+                <exclude>ext-services-mock.properties</exclude>
+                <exclude>tfc-properties.properties</exclude>
             </excludes>
         </fileSet>
     </fileSets>

@@ -12,6 +12,9 @@
             <outputDirectory></outputDirectory>
             <directory>pt-two</directory>
             <useDefaultExcludes>true</useDefaultExcludes>
+            <excludes>
+                <exclude>mockservice.conf</exclude>
+            </excludes>
         </fileSet>
     </fileSets>
 </assembly>

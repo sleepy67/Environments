@@ -16,6 +16,7 @@ csrid.sessionTimeout = 3600000
 
 http {
 port = {{TFC.CIC.App.Port}}
+address = "{{TFC.CIC.App.Address}}"
 }
 
 TFCC {
@@ -25,8 +26,6 @@ TFCC {
   RPM.packageName = "tfc-cic"
   Publish.Repository = "http://nexus.tfcc.virtualsi.uk/"
   CICBetaURL = "http://{{TFC.CIC.App.Address}}:{{TFC.CIC.App.Port}}" // Local running
-  Port = "{{TFC.CIC.App.Port}}"
-  Address = "{{TFC.CIC.App.Address}}"
   IgnoreSession = {{TFC.CIC.Ignore.Session}}
 }
 

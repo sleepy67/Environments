@@ -27,6 +27,7 @@
         <module>sit-two</module>
         <module>pt-three</module>
         <module>sit-three</module>
+        <module>ci-mock</module>
     </modules>
     <properties>
         <env>PLACEHOLDER</env>
