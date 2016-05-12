@@ -14,7 +14,7 @@
             <useDefaultExcludes>true</useDefaultExcludes>
             <excludes>
                 <exclude>ext-services-mock.properties</exclude>
-                <exclude>tfc-properties.properties</exclude>
+                <exclude>tfc-properties.karaf</exclude>
             </excludes>
         </fileSet>
     </fileSets>

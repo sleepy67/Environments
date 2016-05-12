@@ -75,7 +75,7 @@
             </resource>
         </resources>
         <filters>
-            <filter>filter/tfc-properties.properties</filter>
+            <filter>filter/tfc-properties.karaf</filter>
             <filter>filter/portal.conf</filter>
             <filter>filter/portal-conf-for-cic.conf</filter>
             <filter>filter/esm.properties</filter>
