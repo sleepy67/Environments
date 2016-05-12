@@ -16,7 +16,7 @@
         <dependency>
             <groupId>net.atos.tfc.environments</groupId>
             <artifactId>templates</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${project.parent.version}</version>
             <type>zip</type>
         </dependency>
     </dependencies>
@@ -40,7 +40,7 @@
                                 <artifactItem>
                                     <groupId>net.atos.tfc.environments</groupId>
                                     <artifactId>templates</artifactId>
-                                    <version>0.0.1-SNAPSHOT</version>
+                                    <version>${project.parent.version}</version>
                                     <type>zip</type>
                                     <overWrite>true</overWrite>
                                     <outputDirectory>${project.basedir}</outputDirectory>
