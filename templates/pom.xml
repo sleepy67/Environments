@@ -6,13 +6,11 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>net.atos.tfc.environments</groupId>
-        <artifactId>parent</artifactId>
-        <version>1.0.0.0-SNAPSHOT</version>
+        <artifactId>environments-parent</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
-    <groupId>net.atos.tfc.configuration</groupId>
     <artifactId>templates</artifactId>
-    <version>0.0.0.1-SNAPSHOT</version>
     <description>Configuration templates for all TFC projects</description>
     <packaging>pom</packaging>
 
@@ -21,20 +19,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-assembly-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>create-distribution</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>single</goal>
-                        </goals>
-                        <configuration>
-                            <descriptors>
-                                <descriptor>assembly/config.xml</descriptor>
-                            </descriptors>
-                        </configuration>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
