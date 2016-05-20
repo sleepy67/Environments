@@ -83,3 +83,11 @@ fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-auth.error={{TFC.audit.amq.au
 fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-pag-nav.error={{TFC.audit.amq.audit-pag-nav.error}} {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-txn.error={{TFC.audit.amq.audit-txn.error}} {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-account-txn.error={{TFC.audit.amq.audit-account-txn.error}} {{TFC.profile}}
+
+#*********** RSA Settings ******************
+fabric:profile-edit -p {{TFC.PID}}/rsa.set.proxy={{TFC.rsa.set.proxy}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/rsa.challenge.threshold={{TFC.rsa.challenge.threshold}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/rsa.services.endpoint.url={{TFC.rsa.services.endpoint.url}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/rsa.telephone.challenge.url={{TFC.rsa.telephone.challenge.url}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/rsa.stepup.challenge.url={{TFC.rsa.stepup.challenge.url}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/rsa.challenge.warning.url={{TFC.rsa.challenge.warning.url}} {{TFC.profile}}
