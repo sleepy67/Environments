@@ -14,8 +14,8 @@ ccpsignupuserid.sessionTimeout = 3600000
 
 
 http {
-  address = {{TFC.Portal.Bind.Address}}
-  port = {{TFC.Portal.Bind.Port}}
+  address = {{TFC.Portal.CIC.Bind.Address}}
+  port = {{TFC.Portal.CIC.Bind.Port}}
 }
 
 TFCC{
@@ -27,7 +27,7 @@ TFCC{
   IPWhiteList = {{TFC.Portal.CIC.IP.WhiteList}}
   NoLogin = {{TFC.Portal.CIC.NoLogin}}
   IgnoreSession = {{TFC.Portal.CIC.Ignore.Session}}
-  RSAOn = {{TFC.Portal.RSA}}
+  RSAOn = {{TFC.Portal.CIC.RSA}}
 }
 
 play.modules {
