@@ -5,7 +5,7 @@
     <parent>
         <groupId>net.atos.tfc</groupId>
         <artifactId>tfc-dependencies</artifactId>
-        <version>1.0.0.7-SNAPSHOT</version>
+        <version>1.1.0-SNAPSHOT</version>
     </parent>
 
     <scm>
@@ -15,7 +15,7 @@
 
     <groupId>net.atos.tfc.environments</groupId>
     <artifactId>environments-parent</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>TFC Environments Parent</description>
 
