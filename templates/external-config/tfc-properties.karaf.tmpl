@@ -1,93 +1,93 @@
 # TFC Service Layer application configuration
 #*************** Database Configuration************
-fabric:profile-edit -p {{TFC.PID}}/TFC.DB.OracleHost={{TFC.DB.OracleHost}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/TFC.DB.OracleUsername={{TFC.DB.OracleUsername}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/TFC.DB.OraclePassword={{TFC.DB.OraclePassword}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/TFC.DB.Audit.OracleUsername={{TFC.DB.Audit.OracleUsername}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/TFC.DB.Audit.OraclePassword={{TFC.DB.Audit.OraclePassword}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/TFC.DB.DriverType={{TFC.DB.DriverType}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/webservice.ipandport={{TFC.DB.webservice.ipandport}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/TFC.Website.Session.Timeout={{TFC.Website.Session.Timeout}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"TFC.DB.OracleHost={{TFC.DB.OracleHost}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"TFC.DB.OracleUsername={{TFC.DB.OracleUsername}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"TFC.DB.OraclePassword={{TFC.DB.OraclePassword}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"TFC.DB.Audit.OracleUsername={{TFC.DB.Audit.OracleUsername}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"TFC.DB.Audit.OraclePassword={{TFC.DB.Audit.OraclePassword}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"TFC.DB.DriverType={{TFC.DB.DriverType}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"webservice.ipandport={{TFC.DB.webservice.ipandport}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"TFC.Website.Session.Timeout={{TFC.Website.Session.Timeout}}" {{TFC.profile}}
 
 #********* Email and Postcode REGEX Patterns **************
-fabric:profile-edit -p {{TFC.PID}}/postcode.pattern=^((GIR)(0AA)|([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKS-UW]))([0-9][ABD-HJLNP-UW-Z]{2})|(([A-Z]{1,4})(1ZZ))|((BFPO)([0-9]{1,4})))$ {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/email.pattern=^(?=.{0,56}$).(\"([^\"r\\\\]|\\\\[\"r\\\\])*\"|([-a-zA-Z0-9!#$%&'*+/=?^_`{|}~]|(?<!\\.)\\.)*)(?<!\\.)@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,3})$ {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/psswrd.pattern={{TFC.psswrd.pattern}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"postcode.pattern=^((GIR)(0AA)|([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKS-UW]))([0-9][ABD-HJLNP-UW-Z]{2})|(([A-Z]{1,4})(1ZZ))|((BFPO)([0-9]{1,4})))$" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"email.pattern=^(?=.{0,56}$).(\"([^\"r\\\\]|\\\\[\"r\\\\])*\"|([-a-zA-Z0-9!#$%&'*+/=?^_`{|}~]|(?<!\\.)\\.)*)(?<!\\.)@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,3})$" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"psswrd.pattern={{TFC.psswrd.pattern}}" {{TFC.profile}}
 
 #**********BankValidationServices Configuration***********
-fabric:profile-edit -p {{TFC.PID}}/postcodeanywhere.key={{TFC.postcodeanywhere.key}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/postcodeanywhere.url={{TFC.postcodeanywhere.url}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"postcodeanywhere.key={{TFC.postcodeanywhere.key}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"postcodeanywhere.url={{TFC.postcodeanywhere.url}}" {{TFC.profile}}
 
 #*************** HMRCServices Configuration************
 
-fabric:profile-edit -p {{TFC.PID}}/hmrc.incomingq.brokerurl={{TFC.hmrc.incomingq.brokerurl}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/hmrc.incomingq.username={{TFC.hmrc.incomingq.username}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/hmrc.incomingq.password={{TFC.hmrc.incomingq.password}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"hmrc.incomingq.brokerurl={{TFC.hmrc.incomingq.brokerurl}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"hmrc.incomingq.username={{TFC.hmrc.incomingq.username}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"hmrc.incomingq.password={{TFC.hmrc.incomingq.password}}" {{TFC.profile}}
 
 #*************** Thaler Config ************************
 #**URLs**
-fabric:profile-edit -p {{TFC.PID}}/thaler.url={{TFC.thaler.url}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/thaler.externalapplication={{TFC.thaler.externalapplication}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/thaler.externalreferenceprefix={{TFC.thaler.externalreferenceprefix}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/thaler.password={{TFC.thaler.password}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/thaler.username={{TFC.thaler.username}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"thaler.url={{TFC.thaler.url}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"thaler.externalapplication={{TFC.thaler.externalapplication}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"thaler.externalreferenceprefix={{TFC.thaler.externalreferenceprefix}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"thaler.password={{TFC.thaler.password}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"thaler.username={{TFC.thaler.username}}" {{TFC.profile}}
 #*************** RSA Services Config ************************
-fabric:profile-edit -p {{TFC.PID}}/rsa.organisation.id={{TFC.rsa.organisation.id}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/rsa.organisation.pwd={{TFC.rsa.organisation.pwd}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/rsa.url={{TFC.rsa.url}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.organisation.id={{TFC.rsa.organisation.id}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.organisation.pwd={{TFC.rsa.organisation.pwd}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.url={{TFC.rsa.url}}" {{TFC.profile}}
 
 #*************** CCPSignupIntegrationService ***********
-fabric:profile-edit -p {{TFC.PID}}/ccpsignup.restservice.url={{TFC.ccpsignup.restservice.url}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"ccpsignup.restservice.url={{TFC.ccpsignup.restservice.url}}" {{TFC.profile}}
 
 #*************** CCPAccountIntegrationService ***********
-fabric:profile-edit -p {{TFC.PID}}/ccpaccount.restservice.url={{TFC.ccpaccount.restservice.url}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"ccpaccount.restservice.url={{TFC.ccpaccount.restservice.url}}" {{TFC.profile}}
 
 #*************** CIC Services ***********
-fabric:profile-edit -p {{TFC.PID}}/cicsearch.maxresults={{TFC.cicsearch.maxresults}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/cic.restservice.url={{TFC.cic.restservice.url}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/cicccpaccount.restservice.url={{TFC.cicccpaccount.restservice.url}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"cicsearch.maxresults={{TFC.cicsearch.maxresults}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"cic.restservice.url={{TFC.cic.restservice.url}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"cicccpaccount.restservice.url={{TFC.cicccpaccount.restservice.url}}" {{TFC.profile}}
 
 #*************** AMQ Config ********************
-fabric:profile-edit -p {{TFC.PID}}/amq.brokerurl={{TFC.amq.brokerurl}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/amq.pword={{TFC.amq.pword}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/amq.username={{TFC.amq.username}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"amq.brokerurl={{TFC.amq.brokerurl}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"amq.pword={{TFC.amq.pword}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"amq.username={{TFC.amq.username}}" {{TFC.profile}}
 
 #*********************************************************
-fabric:profile-edit -p {{TFC.PID}}/primarycontactactivation.maxretries = {{TFC.primarycontactactivation.maxretries}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"primarycontactactivation.maxretries = {{TFC.primarycontactactivation.maxretries}}" {{TFC.profile}}
 #*************** CCP Activation Config ********************
-fabric:profile-edit -p {{TFC.PID}}/ccpactivation.amq.queuename={{TFC.ccpactivation.amq.queuename}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"ccpactivation.amq.queuename={{TFC.ccpactivation.amq.queuename}}" {{TFC.profile}}
 
 #*************** JOB SCHEDULES ********************
 
 #*************** ERROR MESSAGES FILE ********************
-fabric:profile-edit -p {{TFC.PID}}/net.atos.tfc.services.common.exceptions.file={{TFC.exceptions.json.file}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.services.common.exceptions.file={{TFC.exceptions.json.file}}" {{TFC.profile}}
 
-fabric:profile-edit -p {{TFC.PID}}/net.atos.tfc.authentication.service.csr={{TFC.net.atos.tfc.authentication.service.csr}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/net.atos.tfc.authentication.service.ldap.factory={{TFC.net.atos.tfc.authentication.service.ldap.factory}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/net.atos.tfc.authentication.service.ldap.auth.type={{TFC.net.atos.tfc.authentication.service.ldap.auth.type}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/net.atos.tfc.authentication.service.ldap.base.user.dn={{TFC.net.atos.tfc.authentication.service.ldap.base.user.dn}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/net.atos.tfc.authentication.service.ldap.uid.attr={{TFC.net.atos.tfc.authentication.service.ldap.uid.attr}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/net.atos.tfc.authentication.service.ldap.admin.dn={{TFC.net.atos.tfc.authentication.service.ldap.admin.dn}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/net.atos.tfc.authentication.service.ldap.admin.password={{TFC.net.atos.tfc.authentication.service.ldap.admin.password}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/net.atos.tfc.authentication.service.ldap.server={{TFC.net.atos.tfc.authentication.service.ldap.server}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.csr={{TFC.net.atos.tfc.authentication.service.csr}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.factory={{TFC.net.atos.tfc.authentication.service.ldap.factory}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.auth.type={{TFC.net.atos.tfc.authentication.service.ldap.auth.type}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.base.user.dn={{TFC.net.atos.tfc.authentication.service.ldap.base.user.dn}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.uid.attr={{TFC.net.atos.tfc.authentication.service.ldap.uid.attr}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.admin.dn={{TFC.net.atos.tfc.authentication.service.ldap.admin.dn}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.admin.password={{TFC.net.atos.tfc.authentication.service.ldap.admin.password}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.server={{TFC.net.atos.tfc.authentication.service.ldap.server}} {{TFC.profile}}"
 
 #*********** AUDITING Framework client QUEUE ******************
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.brokerurl={{TFC.audit.amq.brokerurl}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.username={{TFC.audit.amq.username}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.password={{TFC.audit.amq.password}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-auth={{TFC.audit.amq.audit-auth}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-pag-nav={{TFC.audit.amq.audit-pag-nav}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-txn={{TFC.audit.amq.audit-txn}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-account-txn={{TFC.audit.amq.audit-account-txn}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-auth.error={{TFC.audit.amq.audit-auth.error}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-pag-nav.error={{TFC.audit.amq.audit-pag-nav.error}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-txn.error={{TFC.audit.amq.audit-txn.error}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/audit.amq.audit-account-txn.error={{TFC.audit.amq.audit-account-txn.error}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.brokerurl={{TFC.audit.amq.brokerurl}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.username={{TFC.audit.amq.username}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.password={{TFC.audit.amq.password}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.audit-auth={{TFC.audit.amq.audit-auth}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.audit-pag-nav={{TFC.audit.amq.audit-pag-nav}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.audit-txn={{TFC.audit.amq.audit-txn}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.audit-account-txn={{TFC.audit.amq.audit-account-txn}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.audit-auth.error={{TFC.audit.amq.audit-auth.error}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.audit-pag-nav.error={{TFC.audit.amq.audit-pag-nav.error}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.audit-txn.error={{TFC.audit.amq.audit-txn.error}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"audit.amq.audit-account-txn.error={{TFC.audit.amq.audit-account-txn.error}}" {{TFC.profile}}
 
 #*********** RSA Settings ******************
-fabric:profile-edit -p {{TFC.PID}}/rsa.set.proxy={{TFC.rsa.set.proxy}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/rsa.challenge.threshold={{TFC.rsa.challenge.threshold}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/rsa.services.endpoint.url={{TFC.rsa.services.endpoint.url}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/rsa.telephone.challenge.url={{TFC.rsa.telephone.challenge.url}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/rsa.stepup.challenge.url={{TFC.rsa.stepup.challenge.url}} {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/rsa.challenge.warning.url={{TFC.rsa.challenge.warning.url}} {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.set.proxy={{TFC.rsa.set.proxy}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.challenge.threshold={{TFC.rsa.challenge.threshold}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.services.endpoint.url={{TFC.rsa.services.endpoint.url}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.telephone.challenge.url={{TFC.rsa.telephone.challenge.url}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.stepup.challenge.url={{TFC.rsa.stepup.challenge.url}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.challenge.warning.url={{TFC.rsa.challenge.warning.url}}" {{TFC.profile}}
