@@ -3,7 +3,7 @@
 
     <parent>
         <groupId>net.atos.tfc.environments</groupId>
-        <artifactId>environments-parent</artifactId>
+        <artifactId>EnvironmentConfig</artifactId>
         <version>0.1.1-SNAPSHOT</version>
     </parent>
 
