@@ -4,7 +4,7 @@
     <parent>
         <groupId>net.atos.tfc.environments</groupId>
         <artifactId>environments-parent</artifactId>
-        <version>0.1.0-1-SNAPSHOT</version>
+        <version>0.1.0-1</version>
     </parent>
 
     <artifactId>sit-one</artifactId>
