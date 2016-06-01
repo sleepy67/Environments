@@ -69,7 +69,7 @@ fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.bas
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.uid.attr={{TFC.net.atos.tfc.authentication.service.ldap.uid.attr}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.admin.dn={{TFC.net.atos.tfc.authentication.service.ldap.admin.dn}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.admin.password={{TFC.net.atos.tfc.authentication.service.ldap.admin.password}}" {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.server={{TFC.net.atos.tfc.authentication.service.ldap.server}} {{TFC.profile}}"
+fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.server={{TFC.net.atos.tfc.authentication.service.ldap.server}}" {{TFC.profile}}
 
 #*********** AUDITING Framework client QUEUE ******************
 fabric:profile-edit -p {{TFC.PID}}/"audit.amq.brokerurl={{TFC.audit.amq.brokerurl}}" {{TFC.profile}}
@@ -91,3 +91,13 @@ fabric:profile-edit -p {{TFC.PID}}/"rsa.services.endpoint.url={{TFC.rsa.services
 fabric:profile-edit -p {{TFC.PID}}/"rsa.telephone.challenge.url={{TFC.rsa.telephone.challenge.url}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"rsa.stepup.challenge.url={{TFC.rsa.stepup.challenge.url}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"rsa.challenge.warning.url={{TFC.rsa.challenge.warning.url}}" {{TFC.profile}}
+
+# DB Parent Reg User properties
+#*************** Database Configuration************
+fabric:profile-edit -p servicesPID/"TFC.DB.ParentApplication.OracleUsername={{TFC.DB.ParentApplication.OracleUsername}}" {{TFC.profile}}
+fabric:profile-edit -p servicesPID/"TFC.DB.ParentApplication.OraclePassword={{TFC.DB.ParentApplication.OraclePassword}}" {{TFC.profile}}
+fabric:profile-edit -p servicesPID/"TFC.DB.ParentApplication.Pool.MinSize={{TFC.DB.ParentApplication.Pool.MinSize}}" {{TFC.profile}}
+fabric:profile-edit -p servicesPID/"TFC.DB.ParentApplication.Pool.MaxSize={{TFC.DB.ParentApplication.Pool.MaxSize}}" {{TFC.profile}}
+fabric:profile-edit -p servicesPID/"TFC.DB.ParentApplication.Pool.AllConnectionsEquals={{TFC.DB.ParentApplication.Pool.AllConnectionsEquals}}" {{TFC.profile}}
+fabric:profile-edit -p servicesPID/"TFC.DB.ParentApplication.Pool.ConnectionMaxIdleMinutes={{TFC.DB.ParentApplication.Pool.ConnectionMaxIdleMinutes}}" {{TFC.profile}}
+fabric:profile-edit -p servicesPID/"TFC.DB.ParentApplication.Pool.PartitionStrategy={{TFC.DB.ParentApplication.Pool.PartitionStrategy}}" {{TFC.profile}}
