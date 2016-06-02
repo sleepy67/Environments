@@ -61,3 +61,21 @@ TFC.audit.amq.audit-auth.error = net.atos.tfc.auditing.auth.error
 TFC.audit.amq.audit-pag-nav.error = net.atos.tfc.auditing.pagnav.error
 TFC.audit.amq.audit-txn.error = net.atos.tfc.auditing.txn.error
 TFC.audit.amq.audit-account-txn.error = net.atos.tfc.auditing.account.txn.error
+
+TFC.net.atos.tfc.message.hub.synchronous.reply.timeout = 30000
+TFC.net.atos.tfc.message.hub.synchronous.reply.destination.capacity = 32
+TFC.net.atos.tfc.message.hub.hmrc.matching.request.queue = mq:queue:CCP_REQUEST
+TFC.net.atos.tfc.message.hub.hmrc.matching.response.queue = mq:queue:CCP_RESPONSE
+TFC.net.atos.tfc.message.hub.matching.deadletter.queue = direct:error-replies-dql
+TFC.net.atos.tfc.message.hub.connection.ssl.truststore.location = /////cdc-truststore.jks
+TFC.net.atos.tfc.message.hub.connection.ssl.truststore.password = password
+TFC.net.atos.tfc.message.hub.connection.ssl.keystore.location = /////tfc-user.jks
+TFC.net.atos.tfc.message.hub.connection.ssl.keystore.password = Password1
+TFC.net.atos.tfc.message.hub.connection.url = ssl://mq.cdc-tai.canopy-cloud.com:61603?socket.enabledProtocols=TLSv1.2
+TFC.net.atos.tfc.message.hub.connection.user = tfc_user
+TFC.net.atos.tfc.message.hub.connection.password = Password1
+
+#*********** PARAPP Messages ******************
+TFC.parapp.child.childdetailserror1 = ErrorMessage.RelationShipAsFoster
+TFC.parapp.child.childdetailserror2 = ParentRegistration.ChildErrorTooOldNoBenefit
+TFC.parapp.child.childdetailserror3 = ParentRegistration.ChildNotEligible
