@@ -95,9 +95,9 @@ TFC.net.atos.tfc.message.hub.synchronous.reply.destination.capacity = 32
 TFC.net.atos.tfc.message.hub.hmrc.matching.request.queue = mq:queue:CCP_REQUEST
 TFC.net.atos.tfc.message.hub.hmrc.matching.response.queue = mq:queue:CCP_RESPONSE
 TFC.net.atos.tfc.message.hub.matching.deadletter.queue = direct:error-replies-dql
-TFC.net.atos.tfc.message.hub.connection.ssl.truststore.location = file:/c:/projects/ATOS/TFC/TFC-ProxyServices/MessageHub/src/test/resources/jsse/cdc-truststore.jks
+TFC.net.atos.tfc.message.hub.connection.ssl.truststore.location = /////cdc-truststore.jks
 TFC.net.atos.tfc.message.hub.connection.ssl.truststore.password = password
-TFC.net.atos.tfc.message.hub.connection.ssl.keystore.location = file:/c:/projects/ATOS/TFC/TFC-ProxyServices/MessageHub/src/test/resources/jsse/tfc-user.jks
+TFC.net.atos.tfc.message.hub.connection.ssl.keystore.location = /////tfc-user.jks
 TFC.net.atos.tfc.message.hub.connection.ssl.keystore.password = Password1
 TFC.net.atos.tfc.message.hub.connection.url = ssl://mq.cdc-tai.canopy-cloud.com:61603?socket.enabledProtocols=TLSv1.2
 TFC.net.atos.tfc.message.hub.connection.user = tfc_user
