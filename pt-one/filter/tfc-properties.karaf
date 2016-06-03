@@ -61,6 +61,13 @@ TFC.audit.amq.audit-auth.error = net.atos.tfc.auditing.auth.error
 TFC.audit.amq.audit-pag-nav.error = net.atos.tfc.auditing.pagnav.error
 TFC.audit.amq.audit-txn.error = net.atos.tfc.auditing.txn.error
 TFC.audit.amq.audit-account-txn.error = net.atos.tfc.auditing.account.txn.error
+TFC.DB.ParentApplication.OracleUsername = parreg
+TFC.DB.ParentApplication.OraclePassword = swpparr1
+TFC.DB.ParentApplication.Pool.MinSize = 5
+TFC.DB.ParentApplication.Pool.MaxSize = 20
+TFC.DB.ParentApplication.Pool.AllConnectionsEquals = false
+TFC.DB.ParentApplication.Pool.ConnectionMaxIdleMinutes = 10
+TFC.DB.ParentApplication.Pool.PartitionStrategy = none
 
 TFC.net.atos.tfc.message.hub.synchronous.reply.timeout = 30000
 TFC.net.atos.tfc.message.hub.synchronous.reply.destination.capacity = 32
