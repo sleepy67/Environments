@@ -64,8 +64,8 @@ TFC.DB.ParentApplication.Pool.PartitionStrategy = none
 
 TFC.net.atos.tfc.message.hub.synchronous.reply.timeout = 30000
 TFC.net.atos.tfc.message.hub.synchronous.reply.destination.capacity = 32
-TFC.net.atos.tfc.message.hub.hmrc.matching.request.queue = mq:queue:CCP_REQUEST
-TFC.net.atos.tfc.message.hub.hmrc.matching.response.queue = mq:queue:CCP_RESPONSE
+TFC.net.atos.tfc.message.hub.hmrc.matching.request.queue = seda:simulated-matching-request-queue
+TFC.net.atos.tfc.message.hub.hmrc.matching.response.queue = seda:simulated-matching-response-queue
 TFC.net.atos.tfc.message.hub.matching.deadletter.queue = direct:error-replies-dql
 #*********** PARAPP Messages ******************
 TFC.parapp.child.childdetailserror1 = ErrorMessage.RelationShipAsFoster
