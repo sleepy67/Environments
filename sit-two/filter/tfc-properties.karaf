@@ -103,8 +103,3 @@ TFC.net.atos.tfc.message.hub.connection.url = ssl://mq.cdc-tai.canopy-cloud.com:
 TFC.net.atos.tfc.message.hub.connection.user = tfc_user
 TFC.net.atos.tfc.message.hub.connection.password = Password1
 
-#*********** PARAPP Messages ******************
-TFC.parapp.child.childdetailserror1 = ErrorMessage.RelationShipAsFoster
-TFC.parapp.child.childdetailserror2 = ParentRegistration.ChildErrorTooOldNoBenefit
-TFC.parapp.child.childdetailserror3 = ParentRegistration.ChildNotEligible
-
