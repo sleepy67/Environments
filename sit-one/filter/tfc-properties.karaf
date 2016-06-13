@@ -103,7 +103,4 @@ TFC.net.atos.tfc.message.hub.connection.url = ssl://mq.cdc-tai.canopy-cloud.com:
 TFC.net.atos.tfc.message.hub.connection.user = tfc_user
 TFC.net.atos.tfc.message.hub.connection.password = Password1
 
-parapp.child.childdetailserror1 = ErrorMessage.RelationShipAsFoster
-parapp.child.childdetailserror2 = ParentRegistration.ChildErrorTooOldNoBenefit
-parapp.child.childdetailserror3 = ParentRegistration.ChildNotEligible
 hmrc.messagehub.endpoint = http://0.0.0.0:8199/cxf/tax
