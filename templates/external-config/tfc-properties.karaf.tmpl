@@ -29,7 +29,8 @@ fabric:profile-edit -p {{TFC.PID}}/"webservice.ipandport={{TFC.DB.webservice.ipa
 fabric:profile-edit -p {{TFC.PID}}/"TFC.Website.Session.Timeout={{TFC.Website.Session.Timeout}}" {{TFC.profile}}
 #********* Email and Postcode REGEX Patterns **************
 fabric:profile-edit -p {{TFC.PID}}/"postcode.pattern=^((GIR)(0AA)|([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKS-UW]))([0-9][ABD-HJLNP-UW-Z]{2})|(([A-Z]{1,4})(1ZZ))|((BFPO)([0-9]{1,4})))$" {{TFC.profile}}
-fabric:profile-edit -p {{TFC.PID}}/"email.pattern=^(?=.{0,56}$).(\"([^\"r\\\\]|\\\\[\"r\\\\])*\"|([-a-zA-Z0-9!#$%&'*+/=?^_`{|}~]|(?<!\\.)\\.)*)(?<!\\.)@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,3})$" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"email.pattern=^(?=.{0,56}$).(\\\"([^\\\"r\\\\\\\\]|\\\\\\\\[\\\"r\\\\\\\\])*\\\"|([-a-zA-Z0-9!#$%&'*+/=?^_`{|}~]|(?<!\\.)\\.)*)(?<!\\.)@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,3})$" {{TFC.profile}} 
+
 fabric:profile-edit -p {{TFC.PID}}/"psswrd.pattern={{TFC.psswrd.pattern}}" {{TFC.profile}}
 #**********BankValidationServices Configuration***********
 fabric:profile-edit -p {{TFC.PID}}/"postcodeanywhere.key={{TFC.postcodeanywhere.key}}" {{TFC.profile}}
