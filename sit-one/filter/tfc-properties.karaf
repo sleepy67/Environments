@@ -137,9 +137,9 @@ TFC.audit.amq.username = admin
 TFC.audit.amq.password = admin
 
 #*************** MESSAGE HUB***************
-TFC.net.atos.tfc.message.hub.connection.ssl.truststore.location = /////cdc-truststore.jks
+TFC.net.atos.tfc.message.hub.connection.ssl.truststore.location = /appl/tfc/fuse/cdc-truststore.jks
 TFC.net.atos.tfc.message.hub.connection.ssl.truststore.password = password
-TFC.net.atos.tfc.message.hub.connection.ssl.keystore.location = /////tfc-user.jks
+TFC.net.atos.tfc.message.hub.connection.ssl.keystore.location = /appl/tfc/fuse/tfc-user.jks
 TFC.net.atos.tfc.message.hub.connection.ssl.keystore.password = Password1
 TFC.net.atos.tfc.message.hub.connection.url = ssl://mq.cdc-tai.canopy-cloud.com:61603?socket.enabledProtocols=TLSv1.2
 TFC.net.atos.tfc.message.hub.connection.user = tfc_user
