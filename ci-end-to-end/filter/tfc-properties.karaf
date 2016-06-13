@@ -1,19 +1,19 @@
-EnvironmentName=Prod/Test One
+EnvironmentName=E2E test environment
 #*************** Fabric **************************
 TFC.PID=servicesPID
 TFC.profile=tfc-properties
 #*************** Database Configuration************
-TFC.DB.OracleHost = jdbc:oracle:thin@127.0.0.1:1521:XE
-TFC.DB.OracleUsername = CCPREG
-TFC.DB.OraclePassword = swpccpr1
+TFC.DB.OracleHost = jdbc:oracle:thin:@127.0.0.1:1521:XE
+TFC.DB.OracleUsername = lev03
+TFC.DB.OraclePassword = lev03_pass$
 TFC.DB.Pool.MinSize = 5
 TFC.DB.Pool.MaxSize = 20
 TFC.DB.Pool.AllConnectionsEquals = false
 TFC.DB.Pool.ConnectionMaxIdleMinutes = 10
 TFC.DB.Pool.PartitionStrategy = none
 
-TFC.DB.Audit.OracleUsername = AUDUSR
-TFC.DB.Audit.OraclePassword = aud_06_portctfc
+TFC.DB.Audit.OracleUsername = audusr
+TFC.DB.Audit.OraclePassword = audusr_pass$
 TFC.DB.Audit.Pool.MinSize = 5
 TFC.DB.Audit.Pool.MaxSize = 20
 TFC.DB.Audit.Pool.AllConnectionsEquals = false
@@ -21,7 +21,7 @@ TFC.DB.Audit.Pool.ConnectionMaxIdleMinutes = 10
 TFC.DB.Audit.Pool.PartitionStrategy = none
 
 TFC.DB.ParentApplication.OracleUsername = parreg
-TFC.DB.ParentApplication.OraclePassword = swpparr1
+TFC.DB.ParentApplication.OraclePassword = sparreg_pass$
 TFC.DB.ParentApplication.Pool.MinSize = 5
 TFC.DB.ParentApplication.Pool.MaxSize = 20
 TFC.DB.ParentApplication.Pool.AllConnectionsEquals = false
@@ -29,15 +29,15 @@ TFC.DB.ParentApplication.Pool.ConnectionMaxIdleMinutes = 10
 TFC.DB.ParentApplication.Pool.PartitionStrategy = none
 
 TFC.DB.DriverType = thin
-TFC.DB.webservice.ipandport = 0.0.0.0:8183
+TFC.DB.webservice.ipandport = 127.0.0.1:8183
 TFC.Website.Session.Timeout = 8
 TFC.psswrd.pattern = 8
-TFC.postcodeanywhere.key = test
+TFC.postcodeanywhere.key = ZR29-RW24-AH53-WT32
 TFC.postcodeanywhere.url = http://127.0.0.1:7002/BankAccountValidationService
 TFC.hmrc.incomingq.brokerurl = discovery:(fabric:g1)
 TFC.hmrc.incomingq.username = admin
 TFC.hmrc.incomingq.password = admin
-TFC.thaler.url = http://127.0.0.1:7000
+TFC.thaler.url = hhttp://127.0.0.1:7000
 TFC.thaler.externalapplication = PTL
 TFC.thaler.externalreferenceprefix = PTL
 TFC.thaler.password = thaler
@@ -45,7 +45,7 @@ TFC.thaler.username = portal
 TFC.rsa.organisation.id = TestId
 TFC.rsa.organisation.pwd = TestPwd
 TFC.rsa.url = http://127.0.0.1:7003/AdaptiveAuthentication
-TFC.rsa.set.proxy = N
+TFC.rsa.set.proxy = Y
 TFC.rsa.challenge.threshold = 0
 TFC.rsa.services.endpoint.url = https://rbauat2.cyota.com/AdaptiveAuthentication_6_5/AdaptiveAuthentication
 TFC.rsa.telephone.challenge.url = /ccp/acc/rsaphonenumbers
@@ -55,7 +55,7 @@ TFC.ccpparent.restservice.url = http://127.0.0.1:8189/par/app
 TFC.ccpsignup.restservice.url = http://127.0.0.1:8189/ccp/signup
 TFC.ccpaccount.restservice.url = http://127.0.0.1:8189/ccp/acc
 TFC.cicsearch.maxresults = 100
-TFC.cic.restservice.url = http://0.0.0.0:8189/cic
+TFC.cic.restservice.url = http:/127.0.0.1:8189/cic
 TFC.cicccpaccount.restservice.url = http://127.0.0.1:8189/cic/ccp/acc
 TFC.amq.brokerurl = discovery:(fabric:g1)
 TFC.amq.pword = admin
@@ -78,7 +78,7 @@ TFC.net.atos.tfc.authentication.service.ldap.base.user.dn = ,ou=Users,dc=atos,dc
 TFC.net.atos.tfc.authentication.service.ldap.uid.attr = uid
 TFC.net.atos.tfc.authentication.service.ldap.admin.dn = uid=admin,ou=system
 TFC.net.atos.tfc.authentication.service.ldap.admin.password = secret
-TFC.net.atos.tfc.authentication.service.ldap.server = ldap://localhost:10389/
+TFC.net.atos.tfc.authentication.service.ldap.server = ldap://127.0.0.1:10389/
 TFC.audit.amq.brokerurl = discovery:(fabric:g1)
 TFC.audit.amq.username = admin
 TFC.audit.amq.password = admin
@@ -92,18 +92,14 @@ TFC.audit.amq.audit-txn.error = net.atos.tfc.auditing.txn.error
 TFC.audit.amq.audit-account-txn.error = net.atos.tfc.auditing.account.txn.error
 TFC.net.atos.tfc.message.hub.synchronous.reply.timeout = 30000
 TFC.net.atos.tfc.message.hub.synchronous.reply.destination.capacity = 32
-TFC.net.atos.tfc.message.hub.hmrc.matching.request.queue = mq:queue:CCP_REQUEST
-TFC.net.atos.tfc.message.hub.hmrc.matching.response.queue = mq:queue:CCP_RESPONSE
+TFC.net.atos.tfc.message.hub.hmrc.matching.request.queue = seda:simulated-matching-request-queue
+TFC.net.atos.tfc.message.hub.hmrc.matching.response.queue = seda:simulated-matching-response-queue
 TFC.net.atos.tfc.message.hub.matching.deadletter.queue = direct:error-replies-dql
-TFC.net.atos.tfc.message.hub.connection.ssl.truststore.location = file:/c:/projects/ATOS/TFC/TFC-ProxyServices/MessageHub/src/test/resources/jsse/cdc-truststore.jks
+TFC.net.atos.tfc.message.hub.connection.ssl.truststore.location = /appl/tfc/fuse/cdc-truststore.jks
 TFC.net.atos.tfc.message.hub.connection.ssl.truststore.password = password
-TFC.net.atos.tfc.message.hub.connection.ssl.keystore.location = file:/c:/projects/ATOS/TFC/TFC-ProxyServices/MessageHub/src/test/resources/jsse/tfc-user.jks
+TFC.net.atos.tfc.message.hub.connection.ssl.keystore.location = /appl/tfc/fuse/tfc-user.jks
 TFC.net.atos.tfc.message.hub.connection.ssl.keystore.password = Password1
 TFC.net.atos.tfc.message.hub.connection.url = ssl://mq.cdc-tai.canopy-cloud.com:61603?socket.enabledProtocols=TLSv1.2
 TFC.net.atos.tfc.message.hub.connection.user = tfc_user
 TFC.net.atos.tfc.message.hub.connection.password = Password1
-
-#*********** PARAPP Messages ******************
-TFC.parapp.child.childdetailserror1 = ErrorMessage.RelationShipAsFoster
-TFC.parapp.child.childdetailserror2 = ParentRegistration.ChildErrorTooOldNoBenefit
-TFC.parapp.child.childdetailserror3 = ParentRegistration.ChildNotEligible
+hmrc.messagehub.endpoint = http://127.0.0.1:8199/cxf/tax
