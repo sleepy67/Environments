@@ -54,6 +54,7 @@ TFC.rsa.challenge.warning.url = /ccp/acc/rsaphonewarning
 TFC.ccpparent.restservice.url = http://0.0.0.0:8189/par/app
 TFC.ccpsignup.restservice.url = http://0.0.0.0:8189/ccp/signup
 TFC.ccpaccount.restservice.url = http://0.0.0.0:8189/ccp/acc
+TFC.parapp.restservice.url = http://0.0.0.0:8189/par/app
 TFC.cicsearch.maxresults = 100
 TFC.cic.restservice.url = http://0.0.0.0:8189/cic
 TFC.cicccpaccount.restservice.url = http://0.0.0.0:8189/cic/ccp/acc
