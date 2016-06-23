@@ -1,3 +1,7 @@
+EnvironmentName=Prod/Test One
+#*************** Fabric **************************
+TFC.PID=servicesPID
+TFC.profile=tfc-properties
 TFC.DB.OracleHost = jdbc:oracle:thin:@10.61.10.195:1527:PORTATFC
 TFC.DB.OracleUsername = CCPREG
 TFC.DB.OraclePassword = ccp_pr3g
