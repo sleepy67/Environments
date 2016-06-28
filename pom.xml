@@ -14,7 +14,7 @@
 
     <groupId>net.atos.tfc.environments</groupId>
     <artifactId>environments-parent</artifactId>
-    <version>0.1.0-4-SNAPSHOT</version>
+    <version>0.1.4-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>TFC Environments Parent</description>
 
