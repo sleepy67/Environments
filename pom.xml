@@ -28,6 +28,7 @@
         <module>sit-three</module>
         <module>ci-mock</module>
         <module>ci-end-to-end</module>
+        <module>ci-master</module>
     </modules>
     <properties>
         <env>PLACEHOLDER</env>
