@@ -14,6 +14,7 @@
             <useDefaultExcludes>true</useDefaultExcludes>
             <excludes>
                 <exclude>mockservice.conf</exclude>
+                <exclude>ProjectDetails.json</exclude>
             </excludes>
         </fileSet>
     </fileSets>

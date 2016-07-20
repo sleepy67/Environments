@@ -26,6 +26,7 @@
         <module>sit-two</module>
         <module>pt-three</module>
         <module>sit-three</module>
+        <module>nft</module>
         <module>ci-mock</module>
         <module>ci-end-to-end</module>
         <module>ci-master</module>

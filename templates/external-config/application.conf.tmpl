@@ -1,6 +1,5 @@
 # tfc-portal application configuration
-play.crypto.secret = "5s5P4S@Kz=Y9?sX8x[169TXG<Jp_ROsvIcdu1G3<eJ@;<FP?eqwSqPZ0lqz4RP5S"
-
+play.crypto.secret = "Z2TAxoKapghea7]G0F4VJHdPG>NYwWdquAsoPJh`aB_11[kWFCQD4]yrrNMf@BBn"
 
 # The application languages
 play.i18n.langs = ["en", "cy"]
@@ -19,10 +18,8 @@ http {
 
 TFCC{
   MicroServicesURL = {{TFC.Portal.MicroServices.URL}}
-  UserServicesURL = "http://tfc-user-admin.atos.io:80"
-  LinuxInstallLocation = "/appl/tfc/portal"
-  RPM.packageName = "tfc-portal"
   IPWhiteList = {{TFC.Portal.IP.WhiteList}}
+  isCICCanopyDeploy = false
   NoLogin = {{TFC.Portal.NoLogin}}
   IgnoreSession = {{TFC.Portal.Ignore.Session}}
   RSAOn = {{TFC.Portal.RSA}}

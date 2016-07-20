@@ -51,6 +51,7 @@ TFC.rsa.services.endpoint.url = https://rbauat2.cyota.com/AdaptiveAuthentication
 TFC.rsa.telephone.challenge.url = /ccp/acc/rsaphonenumbers
 TFC.rsa.stepup.challenge.url = /ccp/acc/stepupchallenge
 TFC.rsa.challenge.warning.url = /ccp/acc/rsaphonewarning
+TFC.rsa.max.attempts = 3
 TFC.ccpparent.restservice.url = http://127.0.0.1:8189/par/app
 TFC.ccpsignup.restservice.url = http://127.0.0.1:8189/ccp/signup
 TFC.ccpaccount.restservice.url = http://127.0.0.1:8189/ccp/acc
