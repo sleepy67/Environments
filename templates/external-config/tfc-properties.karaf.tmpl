@@ -116,6 +116,9 @@ fabric:profile-edit -p {{TFC.PID}}/"rsa.services.endpoint.url={{TFC.rsa.services
 fabric:profile-edit -p {{TFC.PID}}/"rsa.telephone.challenge.url={{TFC.rsa.telephone.challenge.url}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"rsa.stepup.challenge.url={{TFC.rsa.stepup.challenge.url}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"rsa.challenge.warning.url={{TFC.rsa.challenge.warning.url}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"rsa.max.attempts={{TFC.rsa.max.attempts}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"activation.skip.rsa={{TFC.activation.skip.rsa}}" {{TFC.profile}}
+
 
 #*********** Message Hub Config********************************
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.message.hub.synchronous.reply.timeout={{TFC.net.atos.tfc.message.hub.synchronous.reply.timeout}}" {{TFC.profile}}
