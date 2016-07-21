@@ -5,7 +5,6 @@
 # If you deploy your application to several instances be sure to use the same key!
 play.crypto.secret = "Z2TAxoKapghea7]G0F4VJHdPG>NYwWdquAsoPJh`aB_11[kWFCQD4]yrrNMf@BBn"
 
-
 # The application languages
 play.i18n.langs = ["en", "cy"]
 
@@ -21,12 +20,7 @@ address = {{TFC.CIC.App.Address}}
 
 TFCC {
   MicroServicesURL = {{TFC.CIC.MicroServices.URL}}
-  UserServicesURL = "http://tfc-user-admin.atos.io:80" // External user login service. Used if NoLogin = false
-  LinuxInstallLocation = "/appl/tfc/cic"
-  RPM.packageName = "tfc-cic"
-  Publish.Repository = "http://nexus.tfcc.virtualsi.uk/"
   CICBetaURL = {{TFC.CIC.Beta.URL}}
-  IgnoreSession = {{TFC.CIC.Ignore.Session}}
 }
 
 play.modules {
