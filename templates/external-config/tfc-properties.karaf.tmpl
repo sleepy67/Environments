@@ -53,8 +53,6 @@ fabric:profile-edit -p {{TFC.PID}}/"rsa.organisation.id={{TFC.rsa.organisation.i
 fabric:profile-edit -p {{TFC.PID}}/"rsa.organisation.pwd={{TFC.rsa.organisation.pwd}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"rsa.url={{TFC.rsa.url}}" {{TFC.profile}}
 
-fabric:profile-edit -p {{TFC.PID}}/"ccpparent.restservice.url={{TFC.ccpparent.restservice.url}}" {{TFC.profile}}
-
 #*************** CCPSignupIntegrationService ***********
 fabric:profile-edit -p {{TFC.PID}}/"ccpsignup.restservice.url={{TFC.ccpsignup.restservice.url}}" {{TFC.profile}}
 
@@ -71,8 +69,6 @@ fabric:profile-edit -p {{TFC.PID}}/"amq.brokerurl={{TFC.amq.brokerurl}}" {{TFC.p
 fabric:profile-edit -p {{TFC.PID}}/"amq.pword={{TFC.amq.pword}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"amq.username={{TFC.amq.username}}" {{TFC.profile}}
 
-#*********************************************************
-fabric:profile-edit -p {{TFC.PID}}/"primarycontactactivation.maxretries = {{TFC.primarycontactactivation.maxretries}}" {{TFC.profile}}
 #*************** CCP Activation Config ********************
 fabric:profile-edit -p {{TFC.PID}}/"ccpactivation.amq.queuename={{TFC.ccpactivation.amq.queuename}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"ccpactivationdeclined.amq.queuename={{TFC.ccpactivationdeclined.amq.queuename}}" {{TFC.profile}}
@@ -87,7 +83,10 @@ fabric:profile-edit -p {{TFC.PID}}/"job.cleansession.cron={{TFC.job.cleansession
 #*************** ERROR MESSAGES FILE ********************
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.services.common.exceptions.file={{TFC.exceptions.json.file}}" {{TFC.profile}}
 
+#*************** CSR AUTH SERVICE TYPE PROPERTY VALS = LDAP or IN_MEMORY********************
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.csr={{TFC.net.atos.tfc.authentication.service.csr}}" {{TFC.profile}}
+
+#*************** LDAP Config ********************
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.factory={{TFC.net.atos.tfc.authentication.service.ldap.factory}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.auth.type={{TFC.net.atos.tfc.authentication.service.ldap.auth.type}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.authentication.service.ldap.base.user.dn={{TFC.net.atos.tfc.authentication.service.ldap.base.user.dn}}" {{TFC.profile}}

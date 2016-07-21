@@ -14,6 +14,7 @@
             <useDefaultExcludes>true</useDefaultExcludes>
             <excludes>
                 <exclude>mockservice.conf</exclude>
+                <exclude>esm.properties</exclude>
             </excludes>
         </fileSet>
     </fileSets>
