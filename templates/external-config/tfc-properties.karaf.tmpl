@@ -136,5 +136,14 @@ fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.message.hub.connection.user={{T
 fabric:profile-edit -p {{TFC.PID}}/"net.atos.tfc.message.hub.connection.password={{TFC.net.atos.tfc.message.hub.connection.password}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"hmrc.messagehub.endpoint={{hmrc.messagehub.endpoint}}" {{TFC.profile}}
 
+#************ COMMON SERVICES*************
+fabric:profile-edit -p {{TFC.PID}}/"sicommon.restservice.url={{sicommon.restservice.url}}" {{TFC.profile}}
+
+#************ FEEDBACK *******************
+fabric:profile-edit -p {{TFC.PID}}/"feedback.incomingq.brokerurl={{feedback.incomingq.brokerurl}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"feedback.incomingq.usernamel={{feedback.incomingq.username}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"feedback.incomingq.password={{feedback.incomingq.password}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"feedback.incomingq.url={feedback.incomingq.url}}" {{TFC.profile}}
+
 #*********** MISCELLANIOUS ******************
 fabric:profile-edit -p {{TFC.PID}}/"regulator.mod={{regulator.mod}}" {{TFC.profile}}
