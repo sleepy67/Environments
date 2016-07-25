@@ -107,4 +107,4 @@ parapp.child.childdetailserror2 = ParentRegistration.ChildErrorTooOldNoBenefit
 parapp.child.childdetailserror3 = ParentRegistration.ChildNotEligible
 hmrc.messagehub.endpoint = http://0.0.0.0:8199/cxf/tax
 TFC.net.atos.tfc.message.hub.temp.bearer-token = 6e6fff6b8b4e13237c61e553ddc02c27
-regulator.mod = 3
+regulator.mod = 4
