@@ -81,3 +81,4 @@ TFC.net.atos.tfc.message.hub.connection.password = Password1
 TFC.parapp.child.childdetailserror1 = ErrorMessage.RelationShipAsFoster
 TFC.parapp.child.childdetailserror2 = ParentRegistration.ChildErrorTooOldNoBenefit
 TFC.parapp.child.childdetailserror3 = ParentRegistration.ChildNotEligible
+regulator.mod = 4
