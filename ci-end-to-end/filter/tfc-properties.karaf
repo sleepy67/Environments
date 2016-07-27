@@ -56,6 +56,7 @@ TFC.ccpparent.restservice.url = http://127.0.0.1:8189/par/app
 TFC.ccpsignup.restservice.url = http://127.0.0.1:8189/ccp/signup
 TFC.ccpaccount.restservice.url = http://127.0.0.1:8189/ccp/acc
 TFC.parapp.restservice.url = http://127.0.0.1:8189/par/app
+TFC.paracc.restservice.url=http://127.0.0.1:8189/par/acc
 TFC.cicsearch.maxresults = 100
 TFC.cic.restservice.url = http://127.0.0.1:8189/cic
 TFC.cicccpaccount.restservice.url = http://127.0.0.1:8189/cic/ccp/acc

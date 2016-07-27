@@ -53,6 +53,9 @@ fabric:profile-edit -p {{TFC.PID}}/"rsa.organisation.id={{TFC.rsa.organisation.i
 fabric:profile-edit -p {{TFC.PID}}/"rsa.organisation.pwd={{TFC.rsa.organisation.pwd}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"rsa.url={{TFC.rsa.url}}" {{TFC.profile}}
 
+#*************** ParentAccountIntegrationService ***********
+fabric:profile-edit -p {{TFC.PID}}/"paracc.restservice.url={{TFC.paracc.restservice.url}}" {{TFC.profile}}
+
 #*************** CCPSignupIntegrationService ***********
 fabric:profile-edit -p {{TFC.PID}}/"ccpparent.restservice.url={{TFC.ccpparent.restservice.url}}" {{TFC.profile}}
 
