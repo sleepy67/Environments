@@ -104,5 +104,10 @@ TFC.net.atos.tfc.message.hub.connection.ssl.keystore.password = Password1
 TFC.net.atos.tfc.message.hub.connection.url = ssl://mq.cdc-tai.canopy-cloud.com:61603?socket.enabledProtocols=TLSv1.2
 TFC.net.atos.tfc.message.hub.connection.user = tfc_user
 TFC.net.atos.tfc.message.hub.connection.password = Password1
-hmrc.messagehub.endpoint = http://127.0.0.1:8199/cxf/tax
-regulator.mod = 3
+TFC.hmrc.messagehub.endpoint = http://127.0.0.1:8199/cxf/tax
+TFC.regulator.mod = 3
+TFC.sicommon.restservice.url = http://0.0.0.0:8189
+TFC.feedback.incomingq.brokerurl=tcp://0.0.0.0:61616
+TFC.feedback.incomingq.username=admin
+TFC.feedback.incomingq.password=admin
+TFC.feedback.incomingq.url=jms:queue:FeedbackMessageOutbox
