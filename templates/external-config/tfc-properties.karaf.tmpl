@@ -140,5 +140,14 @@ fabric:profile-edit -p {{TFC.PID}}/"parapp.child.childdetailserror1={{parapp.chi
 fabric:profile-edit -p {{TFC.PID}}/"parapp.child.childdetailserror2={{parapp.child.childdetailserror2}}" {{TFC.profile}}
 fabric:profile-edit -p {{TFC.PID}}/"parapp.child.childdetailserror3={{parapp.child.childdetailserror3}}" {{TFC.profile}}
 
+#************ COMMON SERVICES*************
+fabric:profile-edit -p {{TFC.PID}}/"sicommon.restservice.url={{TFC.sicommon.restservice.url}}" {{TFC.profile}}
+
+#************ FEEDBACK *******************
+fabric:profile-edit -p {{TFC.PID}}/"feedback.incomingq.brokerurl={{TFC.feedback.incomingq.brokerurl}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"feedback.incomingq.usernamel={{TFC.feedback.incomingq.username}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"feedback.incomingq.password={{TFC.feedback.incomingq.password}}" {{TFC.profile}}
+fabric:profile-edit -p {{TFC.PID}}/"feedback.incomingq.url={{TFC.feedback.incomingq.url}}" {{TFC.profile}}
+
 #*********** MISCELLANIOUS ******************
 fabric:profile-edit -p {{TFC.PID}}/"regulator.mod={{regulator.mod}}" {{TFC.profile}}
