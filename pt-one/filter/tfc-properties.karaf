@@ -90,6 +90,10 @@ TFC.rsa.stepup.challenge.url = /ccp/acc/stepupchallenge
 TFC.rsa.challenge.warning.url = /ccp/acc/rsaphonewarning
 TFC.rsa.max.attempts = 3
 TFC.activation.skip.rsa = N
+TFC.rsa.services.credentials.user = SOAPUAT
+TFC.rsa.services.credentials.password = 12345qwert!@#QWE
+
+
 TFC.net.atos.tfc.message.hub.synchronous.reply.timeout = 30000
 TFC.net.atos.tfc.message.hub.synchronous.reply.destination.capacity = 32
 TFC.net.atos.tfc.message.hub.hmrc.matching.request.queue = mq:queue:CCP_REQUEST
