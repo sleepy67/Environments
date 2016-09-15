@@ -1,0 +1,77 @@
+#Script should be run as playadm user
+##-------------------------------------------------
+
+RorS=releases
+CIC_version=0.3.0
+Portal_version=0.3.0
+Start_version=0.3.0
+CCP_version=0.3.0
+server=10.65.166.128:8081
+MSURL=10.65.167.242:8189
+SPURL=10.65.167.11
+
+#NFT  - 10.80.67.57
+#DT   - 10.65.166.128
+
+#wget --spider -v http://$server/content/repositories/releases/net/atos/tfc/tfc-cic/$cic_version/tfc-cic-$cic_version.zip
+
+wget http://$server/content/repositories/$RorS/net/atos/tfc/tfc-cic/$CIC_version/tfc-cic-$CIC_version.zip -P /appl/builddir/
+wget http://$server/content/repositories/$RorS/net/atos/tfc/tfc-portal/$Portal_version/tfc-portal-$Portal_version.zip -P /appl/builddir/
+wget http://$server/content/repositories/$RorS/net/atos/tfc/tfc-start-pages/$Start_version/tfc-start-pages-$Start_version.zip -P /appl/builddir/
+wget http://$server/content/repositories/$RorS/net/atos/tfc/tfc-ccp-checker/$CCP_version/tfc-ccp-checker-$CCP_version.zip -P /appl/builddir/
+
+
+chmod 660 /appl/builddir/tfc-cic-$CIC_version.zip
+chmod 660 /appl/builddir/tfc-portal-$Portal_version.zip
+chmod 660 /appl/builddir/tfc-start-pages-$Start_version.zip
+chmod 660 /appl/builddir/tfc-ccp-checker-$CCP_version.zip
+
+unzip /appl/builddir/tfc-portal-$Portal_version.zip -d /appl/tfc/play
+mv /appl/tfc/play/tfc-portal-$Portal_version/ /appl/tfc/play/tfc-portal-cic-$CIC_version/
+ln -sfn /appl/tfc/play/tfc-portal-cic-$CIC_version /appl/tfc/play/latest-portal-cic
+
+unzip /appl/builddir/tfc-portal-$Portal_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-portal-$Portal_version /appl/tfc/play/latest-portal
+
+unzip /appl/builddir/tfc-cic-$CIC_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-cic-$CIC_version /appl/tfc/play/latest-cic
+
+unzip /appl/builddir/tfc-start-pages-$Start_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-start-pages-$Start_version /appl/tfc/play/latest-start-pages
+
+unzip /appl/builddir/tfc-ccp-checker-$CCP_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-ccp-checker-$CCP_version /appl/tfc/play/latest-ccp-checker
+
+##-------------------------------------------------
+##-------------------------------------------------
+
+#CIC
+sed -i '/address/s/127.0.0.1/0.0.0.0'/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i '/5900/s/127.0.0.1:5900/$MSURL'/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i '/CICBetaURL/s/localhost/127.0.0.1'/ /appl/tfc/play/latest-cic/conf/application.conf
+
+#Portal
+sed -i '/address/s/127.0.0.1/0.0.0.0'/ /appl/tfc/play/latest-portal/conf/application.conf
+sed -i '/MicroServicesURL/s/127.0.0.1:5900/$MSURL'/ /appl/tfc/play/latest-portal/conf/application.conf
+sed -i '0,/StartPageUrl/s/127.0.0.1/$SPURL'/ /appl/tfc/play/latest-portal/conf/application.conf
+sed -i '0,/RSAOn/s/false/true'/ /appl/tfc/play/latest-portal/conf/application.conf
+
+#Portal-CIC
+sed -i '/port/s/9000/9002'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '/MicroServicesURL/s/127.0.0.1:5900/$MSURL'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '/StartPageUrl/s/127.0.0.1/$SPURL'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '/IgnoreSession/s/false/true'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '0,/RSAOn/s/false/true'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+
+#Start Pages
+sed -i '/address/s/127.0.0.1/0.0.0.0'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i '/MicroServicesURL/s/127.0.0.1:5900/$MSURL'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i '/CheckerURL/s/9002/9004'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i '0,/RSAOn/s/false/true'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+
+#CCP-Checker
+sed -i '/address/s/127.0.0.1/0.0.0.0'/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
+sed -i '/port/s/9002/9004'/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
+sed -i '0,/StartPageUrl/s/127.0.0.1/$SPURL'/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
+sed -i '/MicroServicesURL/s/127.0.0.1:5900/$MSURL'/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
+sed -i '0,/RSAOn/s/false/true'/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
