@@ -9,12 +9,12 @@
 
     <scm>
         <connection>scm:git:https://github.com/atos-tfc/TFC-Environments.git</connection>
-        <tag>v0.5.0</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <groupId>net.atos.tfc.environments</groupId>
     <artifactId>EnvironmentConfig</artifactId>
-    <version>0.5.0</version>
+    <version>0.5.1-SNAPSHOT</version>
     <packaging>pom</packaging>
     <description>TFC Environments Parent</description>
 
