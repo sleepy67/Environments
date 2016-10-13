@@ -30,6 +30,7 @@
         <module>ci-mock</module>
         <module>ci-end-to-end</module>
         <module>ci-master</module>
+        <module>misc</module>
     </modules>
     <properties>
         <env>PLACEHOLDER</env>

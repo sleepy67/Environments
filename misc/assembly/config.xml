@@ -10,7 +10,7 @@
     <fileSets>
         <fileSet>
             <outputDirectory></outputDirectory>
-            <directory>misc</directory>
+            <directory>portal-scripts</directory>
             <useDefaultExcludes>true</useDefaultExcludes>
         </fileSet>
     </fileSets>
