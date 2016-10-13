@@ -1,0 +1,115 @@
+#Script should be run as playadm user
+##-------------------------------------------------
+
+#https://10.65.167.175   VIP WWW to Play SIT1 
+#https://10.65.167.177   VIP CIC to Play SIT1 
+#https://10.65.167.179   VIP Startpages SIT1
+#https://10.65.167.181   VIP CCP Checker SIT1
+
+#https://10.65.167.35    VIP WWW to Play SIT3 
+#https://10.65.167.37    VIP CIC to Play SIT3 
+#https://10.65.167.167   VIP Startpages SIT3
+#https://10.65.167.169   VIP CCP Checker SIT3
+
+#https://10.65.167.18    VIP WWW to Play PT2 
+#https://10.65.167.20    VIP CIC to Play PT2 
+#https://10.65.00.00     VIP Startpages PT2 
+#https://10.65.00.00     VIP CCP Checker PT2
+
+#SIT1 - 10.65.167.169:8189
+#SIT3 - 10.65.167.244:8189
+#PT2 - 10.65.167.25:8189
+
+RorS=releases
+CIC_version=0.7.0
+Portal_version=0.7.0
+Start_Pages_Version=0.7.0
+CCP_Checker_Version=0.7.0
+
+CI_Server=10.65.166.128:8081
+MicroServices_URL=10.65.167.169:8189
+VM_URL=10.65.164.130
+StartPages_URL=10.65.167.179
+Start_Pages_URL=10.65.167.179
+CCPChecker_URL=10.65.167.181
+Portal_URL=10.65.167.175
+
+wget --content-disposition "http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$Portal_version&r=public&p=zip" -O "tfc-portal-$Portal_version.zip"
+wget --content-disposition "http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-ccp-checker&v=$Portal_version&r=public&p=zip" -O "tfc-ccp-checker-$Portal_version.zip"
+wget --content-disposition "http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-start-pages&v=$Portal_version&r=public&p=zip" -O "tfc-start-pages-$Portal_version.zip"
+wget --content-disposition "http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-cic&v=$CIC_version&r=public&p=zip" -O "tfc-cic-$CIC_version.zip"
+
+#wget http://$CI_Server/content/repositories/$RorS/net/atos/tfc/tfc-cic/$CIC_version/tfc-cic-$CIC_version.zip -P /appl/builddir/
+#wget http://$CI_Server/content/repositories/$RorS/net/atos/tfc/tfc-portal/$Portal_version/tfc-portal-$Portal_version.zip -P /appl/builddir/
+#wget http://$CI_Server/content/repositories/$RorS/net/atos/tfc/tfc-start-pages/$Start_Pages_Version/tfc-start-pages-$Start_Pages_Version.zip -P /appl/builddir/
+#wget http://$CI_Server/content/repositories/$RorS/net/atos/tfc/tfc-ccp-checker/$CCP_Checker_Version/tfc-ccp-checker-$CCP_Checker_Version.zip -P /appl/builddir/
+
+chmod 660 /appl/builddir/tfc-cic-$CIC_version.zip
+chmod 660 /appl/builddir/tfc-portal-$Portal_version.zip
+chmod 660 /appl/builddir/tfc-start-pages-$Start_Pages_Version.zip
+chmod 660 /appl/builddir/tfc-ccp-checker-$CCP_Checker_Version.zip
+unzip /appl/builddir/tfc-portal-$Portal_version.zip -d /appl/tfc/play
+mv /appl/tfc/play/tfc-portal-$Portal_version/ /appl/tfc/play/tfc-portal-cic-$CIC_version/
+ln -sfn /appl/tfc/play/tfc-portal-cic-$CIC_version /appl/tfc/play/latest-portal-cic
+
+unzip /appl/builddir/tfc-portal-$Portal_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-portal-$Portal_version /appl/tfc/play/latest-portal
+
+unzip /appl/builddir/tfc-cic-$CIC_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-cic-$CIC_version /appl/tfc/play/latest-cic
+
+unzip /appl/builddir/tfc-start-pages-$Start_Pages_Version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-start-pages-$Start_Pages_Version /appl/tfc/play/latest-start-pages
+
+unzip /appl/builddir/tfc-ccp-checker-$CCP_Checker_Version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-ccp-checker-$CCP_Checker_Version /appl/tfc/play/latest-ccp-checker
+
+##-------------------------------------------------
+##-------------------------------------------------
+
+#CIC
+sed -i '/address/s/127.0.0.1/0.0.0.0'/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i "/8190/s/127.0.0.1:8190/$MicroServices_URL"/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i '/StartPageUrl/s/http/https'/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i "/StartPageUrl/s/127.0.0.1:9003/$Start_Pages_URL"/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i '/CICBetaURL/s/localhost:9000/127.0.0.1:9002'/ /appl/tfc/play/latest-cic/conf/application.conf
+
+#Portal
+sed -i '/address/s/127.0.0.1/0.0.0.0'/ /appl/tfc/play/latest-portal/conf/application.conf
+sed -i "/MicroServicesURL/s/127.0.0.1:5900/$MicroServices_URL"/ /appl/tfc/play/latest-portal/conf/application.conf
+sed -i '/StartPageUrl/s/http/https'/ /appl/tfc/play/latest-portal/conf/application.conf
+sed -i "/StartPageUrl/s/127.0.0.1:9003/$Start_Pages_URL"/ /appl/tfc/play/latest-portal/conf/application.conf
+sed -i '/RSAOn/s/false/true'/ /appl/tfc/play/latest-portal/conf/application.conf
+
+#Portal-CIC
+sed -i '/port/s/9000/9002'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i "/MicroServicesURL/s/127.0.0.1:5900/$MicroServices_URL"/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '/StartPageUrl/s/http/https'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i "/StartPageUrl/s/127.0.0.1:9003/$Start_Pages_URL"/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '/IgnoreSession/s/false/true'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '/RSAOn/s/false/true'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+
+#Start Pages
+#  PortalURL = "http://127.0.0.1:9000"
+#  PortalURLForIDA = "http://localhost:9000"
+
+
+sed -i '/address/s/127.0.0.1/0.0.0.0'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i "/MicroServicesURL/s/127.0.0.1:5900/$MicroServices_URL"/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i '/PortalURL/s/http/https'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i "/PortalURL /s/127.0.0.1:9000/$Portal_URL"/ /appl/tfc/play/latest-start-pages/conf/application.conf
+#sed -i '/PortalURLForIDA/s/http/https'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i "/PortalURLForIDA/s/localhost:9000/$Portal_URL"/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i '/StartPageUrl/s/http/https'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i "/StartPageUrl/s/127.0.0.1:9003/$Start_Pages_URL"/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i '/CheckerURL/s/http/https'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i "/CheckerURL/s/127.0.0.1:9002/$CCPChecker_URL"/ /appl/tfc/play/latest-start-pages/conf/application.conf
+sed -i '/RSAOn/s/false/true'/ /appl/tfc/play/latest-start-pages/conf/application.conf
+
+#CCP-Checker
+sed -i '/address/s/127.0.0.1/0.0.0.0'/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
+sed -i '/port/s/9002/9004'/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
+sed -i '/StartPageUrl/s/http/https'/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
+sed -i "/StartPageUrl/s/127.0.0.1:9003/$Start_Pages_URL"/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
+sed -i "/MicroServicesURL/s/127.0.0.1:5900/$MicroServices_URL"/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
+sed -i '/RSAOn/s/false/true'/ /appl/tfc/play/latest-ccp-checker/conf/application.conf
