@@ -1,0 +1,74 @@
+#Script should be run as playadm user
+##-------------------------------------------------
+portal_version=0.7.0
+cic_version=0.7.0
+CI_Server=10.80.67.57
+MicroServicesURL=10.80.64.80:8189
+StartPagesURL=10.80.64.57
+
+#NFT  - 10.80.67.57
+#DT   - 10.65.166.128
+
+#wget --spider -v http://10.65.166.128:8081/content/repositories/releases/net/atos/tfc/tfc-cic/$cic_version/tfc-cic-$cic_version.zip
+
+wget http://$CI_Server:8081/content/repositories/releases/net/atos/tfc/tfc-cic/$cic_version/tfc-cic-$cic_version.zip -P /appl/builddir/
+wget http://$CI_Server:8081/content/repositories/releases/net/atos/tfc/tfc-portal/$portal_version/tfc-portal-$portal_version.zip -P /appl/builddir/
+
+chmod 660 /appl/builddir/tfc-cic-$cic_version.zip
+chmod 660 /appl/builddir/tfc-portal-$portal_version.zip
+
+unzip /appl/builddir/tfc-portal-$portal_version.zip -d /appl/tfc/play
+mv /appl/tfc/play/tfc-portal-$portal_version/ /appl/tfc/play/tfc-portal-cic-$portal_version/
+ln -sfn /appl/tfc/play/tfc-portal-cic-$portal_version /appl/tfc/play/latest-portal-cic
+unzip /appl/builddir/tfc-cic-$cic_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-cic-$cic_version /appl/tfc/play/latest-cic
+
+##-------------------------------------------------
+##-------------------------------------------------
+
+##CIC-PORTAL
+#sed -i '/port/s/9000/9002'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+#sed -i "/MicroServicesURL/s/127.0.0.1:5900/$MicroServicesURL"/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+#sed -i "/StartPageUrl/s/127.0.0.1:9003/$StartPagesURL"/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+#sed -i '/IgnoreSession/s/false/true'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+#sed -i '/RSAOn/s/false/true'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+
+sed -i '/port/s/9000/9002'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i "/MicroServicesURL/s/127.0.0.1:5900/$MicroServicesURL"/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '/StartPageUrl/s/http/https'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i "/StartPageUrl/s/127.0.0.1:9003/$StartPagesURL"/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '/IgnoreSession/s/false/true'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+sed -i '/RSAOn/s/false/true'/ /appl/tfc/play/latest-portal-cic/conf/application.conf
+
+#CHECK THESE ARE SET
+###port = "9002"
+###MicroServicesURL = "http://10.65.167.24:8189"
+###IgnoreSession = true
+###RSAOn = true
+#IPWhiteList = ["cic.tfc.atos.io"]
+#isCICCanopyDeploy = false
+#address = "127.0.0.1"
+
+##-------------------------------------------------
+##-------------------------------------------------
+
+#CIC
+#sed -i 's/.*address =.*/  address = \"0.0.0.0\"/' /appl/tfc/play/tfc-cic-$cic_version/conf/application.conf
+#sed -i "/MicroServicesURL/s/127.0.0.1:8190/$MicroServicesURL"/ /appl/tfc/play/tfc-cic-$cic_version/conf/application.conf
+#sed -i "/StartPageUrl/s/127.0.0.1:9003/$StartPagesURL"/ /appl/tfc/play/tfc-cic-$cic_version/conf/application.conf
+#sed -i 's/.* CICBetaURL.*/  CICBetaURL = \"http:\/\/127.0.0.1:9002\"'/ /appl/tfc/play/tfc-cic-$cic_version/conf/application.conf
+
+sed -i '/address/s/127.0.0.1/0.0.0.0'/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i "/8190/s/127.0.0.1:8190/$MicroServicesURL"/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i '/StartPageUrl/s/http/https'/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i "/StartPageUrl/s/127.0.0.1:9003/$StartPagesURL"/ /appl/tfc/play/latest-cic/conf/application.conf
+sed -i '/CICBetaURL/s/localhost:9000/127.0.0.1:9002'/ /appl/tfc/play/latest-cic/conf/application.conf
+
+#CHECK THESE ARE SET
+###address = "0.0.0.0"
+###MicroServicesURL = "http://10.65.167.24:8189"
+###CICBetaURL = "http://127.0.0.1:9002"
+#port = "9001"
+
+##-------------------------------------------------
+##-------------------------------------------------
