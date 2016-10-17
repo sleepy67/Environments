@@ -20,15 +20,8 @@
 
     <modules>
         <module>templates</module>
-        <module>pt-one</module>
         <module>sit-one</module>
-        <module>pt-two</module>
-        <module>sit-two</module>
-        <module>pt-three</module>
-        <module>sit-three</module>
         <module>nft</module>
-        <module>ci-mock</module>
-        <module>ci-end-to-end</module>
         <module>ci-master</module>
         <module>misc</module>
     </modules>
