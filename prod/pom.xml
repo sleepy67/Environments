@@ -7,13 +7,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.atos.tfc.environments.sit-one</groupId>
-    <artifactId>sit-one</artifactId>
-    <description>SIT 1 external configuration</description>
+    <groupId>net.atos.tfc.environments.prod</groupId>
+    <artifactId>prod</artifactId>
+    <description>PROD external configuration</description>
     <packaging>pom</packaging>
 
     <properties>
-        <env>sit-one</env>
+        <env>prod</env>
     </properties>
 
     <modules>
