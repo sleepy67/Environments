@@ -7,77 +7,23 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
+    <groupId>net.atos.tfc.environments.nft</groupId>
     <artifactId>nft</artifactId>
     <description>NFT external configuration</description>
+    <packaging>pom</packaging>
 
-    <dependencies>
-        <dependency>
-            <groupId>net.atos.tfc.environments</groupId>
-            <artifactId>templates</artifactId>
-            <version>${project.parent.version}</version>
-            <type>zip</type>
-        </dependency>
-    </dependencies>
     <properties>
         <env>nft</env>
     </properties>
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-dependency-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <id>unpack-dependencies</id>
-                        <phase>validate</phase>
-                        <goals>
-                            <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                            <artifactItems>
-                                <artifactItem>
-                                    <groupId>net.atos.tfc.environments</groupId>
-                                    <artifactId>templates</artifactId>
-                                    <version>${project.parent.version}</version>
-                                    <type>zip</type>
-                                    <overWrite>true</overWrite>
-                                    <outputDirectory>${project.basedir}</outputDirectory>
-                                </artifactItem>
-                            </artifactItems>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-assembly-plugin</artifactId>
-            </plugin>
-        </plugins>
-        <resources>
-            <resource>
-                <directory>config</directory>
-                <targetPath>${project.basedir}/${env}</targetPath>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-        <filters>
-            <filter>filter/tfc-properties.karaf</filter>
-            <filter>filter/portal.conf</filter>
-            <filter>filter/portal-conf-for-cic.conf</filter>
-            <filter>filter/cic.conf</filter>
-            <filter>filter/ccpimport.properties</filter>
-        </filters>
-    </build>
+
+    <modules>
+        <module>portal</module>
+        <module>cic</module>
+        <module>portal-cic</module>
+        <module>start-pages</module>
+        <module>ccp-checker</module>
+        <module>esm</module>
+        <module>ccpimport</module>
+        <module>tfc-properties</module>
+    </modules>
 </project>
