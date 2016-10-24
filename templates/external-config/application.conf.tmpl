@@ -1,32 +1,85 @@
-# tfc-portal application configuration
 play.crypto.secret = "Z2TAxoKapghea7]G0F4VJHdPG>NYwWdquAsoPJh`aB_11[kWFCQD4]yrrNMf@BBn"
+
 
 # The application languages
 play.i18n.langs = ["en", "cy"]
 
+#Session information
 play.http.session.cookieName = "TaxFreeChildcare"
-
-parentuserid.sessionTimeout = 3600000
+#Session timeout in milliseconds
 ccpaccuserids.sessionTimeout = 3600000
 ccpsignupuserid.sessionTimeout = 3600000
+parentuserid.sessionTimeout = 3600000
 
 http {
-  address = {{TFC.Portal.Bind.Address}}
-  port = {{TFC.Portal.Bind.Port}}
+  address = {{TFC.http.address}}
+  port = {{TFC.http.port}}
 }
 
-TFCC{
-  MicroServicesURL = {{TFC.Portal.MicroServices.URL}}
-  IPWhiteList = {{TFC.Portal.IP.WhiteList}}
+TFCC {
+  PortalURL = {{TFC.PortalURL}}
+  PortalURLForIDA = ${?TFCC.PortalURL}
+  CheckerURL = {{TFC.CheckerURL}}
+  MicroServicesURL = {{TFC.MicroServicesURL}}
+  StartPageUrl = {{TFC.StartPageUrl}}
+  PortalReturnURL = ${?TFCC.StartPageUrl}"/par/app/overview"
+  ParStartPageURL = ${?TFCC.StartPageUrl}"/par/app/overview"
+  PortalSelectURL=  ${?TFCC.StartPageUrl}"/par/app/startpage"
+  CCPStartPageURL = ${?TFCC.StartPageUrl}"/ccp/signup/entrypage"
+  CheckerStartURL = ${?TFCC.StartPageUrl}"/par/app/checkerstart"
+
+  #External urls
+  #GovUK
+  GovUKUrl = {{TFC.GovUKUrl}}
+  ChildcareCalculator = ${?TFCC.GovUKUrl}"/childcare-calculator"
+  NinoLink = ${?TFCC.GovUKUrl}"/apply-national-insurance-number"
+  UTRExplained = ${?TFCC.GovUKUrl}"/new-business-register-for-tax"
+  UTRExplained2 = ${?TFCC.GovUKUrl}"/register-for-self-assessment"
+  LostNinoLink = ${?TFCC.GovUKUrl}"/lost-national-insurance-number"
+  FOIRequestLink = ${?TFCC.GovUKUrl}"/make-a-freedom-of-information-request"
+  TaxCreditLink = ${?TFCC.GovUKUrl}"/topic/benefits-credits/tax-credits"
+  UniversalCreditLink = ${?TFCC.GovUKUrl}"/universal-credit"
+  HelpLink = ${?TFCC.GovUKUrl}"/help"
+  WelshLink = ${?TFCC.GovUKUrl}"/cymraeg"
+  ContactLink = ${?TFCC.GovUKUrl}"/contact"
+  ContactGovUKLink = ${?TFCC.ContactLink}"/govuk"
+  CookieLink = ${?TFCC.HelpLink}"/cookies"
+  AboutGovUKLink = ${?TFCC.HelpLink}"/about-govuk"
+  PrivacyLink2 = ${?TFCC.HelpLink}"/privacy-policy"
+  PrivacyLink = ${?TFCC.GovUKUrl}"/support/privacy-policy"
+  DataProtectionLink = ${?TFCC.GovUKUrl}"/data-protection"
+
+  #NationalArchives
+  NationalArchiveLink = {{TFC.NationalArchiveLink}}
+  GovLicenceLink = ${?TFCC.NationalArchiveLink}"/doc/open-government-licence/version/1/open-government-licence.htm"
+  CrownCopyrightLink = ${?TFCC.NationalArchiveLink}"/information-management/our-services/crown-copyright.htm"
+
+  #Other
+  CabOfficeLink = {{TFC.CabOfficeLink}}
+
+  #cic-portal canopy parameters
+
+  IPWhiteList = ["cic.tfc.atos.io"]
   isCICCanopyDeploy = false
-  NoLogin = {{TFC.Portal.NoLogin}}
-  IgnoreSession = {{TFC.Portal.Ignore.Session}}
-  RSAOn = {{TFC.Portal.RSA}}
+
+  IDAMockservice={{TFC.IDAMockservice}}
+  IDARedirectUrl=${?TFCC.PortalURLForIDA}"/par/app/tfcentrypoint"
+  Scope={{TFC.Scope}}
+  ClientId={{TFC.ClientId}}
+  ResponseType={{TFC.ResponseType}}
+  IDAUrl = {{TFC.IDAUrl}}
+  NoLogin = {{TFC.NoLogin}}
+  IgnoreSession = {{TFC.IgnoreSession}}
+  RSAOn = {{TFC.RSAOn}}
+  EFEOn = {{TFC.EFEOn}}
+
+  ApplicationTitle = {{TFC.ApplicationTitle}}
+  CICBetaURL = {{TFC.CICBetaURL}}
 }
 
 play.modules {
   enabled += "play.filters.csrf.CSRFModule"
   enabled += "play.filters.cors.CORSModule"
   enabled += "play.filters.headers.SecurityHeadersModule"
-  enabled += "play.filters.gzip.GzipFilterModule"
+  enabled += "Module"
 }

@@ -22,13 +22,10 @@
         <module>templates</module>
         <module>pt-one</module>
         <module>sit-one</module>
-        <module>pt-two</module>
-        <module>sit-two</module>
-        <module>pt-three</module>
-        <module>sit-three</module>
+        <module>fs-pt-one</module>
+        <module>fs-sit</module>
         <module>nft</module>
-        <module>ci-mock</module>
-        <module>ci-end-to-end</module>
+        <module>prod</module>
         <module>ci-master</module>
         <module>misc</module>
     </modules>
