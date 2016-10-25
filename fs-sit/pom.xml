@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>net.atos.tfc.environments</groupId>
+        <artifactId>EnvironmentConfig</artifactId>
+        <version>2.0.1-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.atos.tfc.environments.fs-sit</groupId>
+    <artifactId>fs-sit</artifactId>
+    <description>FS SIT external configuration</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <env>fs-sit</env>
+    </properties>
+
+    <modules>
+        <module>portal</module>
+        <module>cic</module>
+        <module>portal-cic</module>
+        <module>start-pages</module>
+        <module>ccp-checker</module>
+        <module>esm</module>
+        <module>ccpimport</module>
+        <module>tfc-properties</module>
+    </modules>
+</project>
