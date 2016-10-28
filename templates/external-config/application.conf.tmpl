@@ -10,6 +10,7 @@ play.http.session.cookieName = "TaxFreeChildcare"
 ccpaccuserids.sessionTimeout = 3600000
 ccpsignupuserid.sessionTimeout = 3600000
 parentuserid.sessionTimeout = 3600000
+csrid.sessionTimeout = 3600000
 
 http {
   address = {{TFC.http.address}}
@@ -81,5 +82,6 @@ play.modules {
   enabled += "play.filters.csrf.CSRFModule"
   enabled += "play.filters.cors.CORSModule"
   enabled += "play.filters.headers.SecurityHeadersModule"
+  enabled += "play.filters.gzip.GzipFilterModule"
   enabled += "Module"
 }

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
     <parent>
         <groupId>net.atos.tfc.environments</groupId>
         <artifactId>EnvironmentConfig</artifactId>
         <version>2.0.1-SNAPSHOT</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.atos.tfc.environments.sit-one</groupId>
     <artifactId>sit-one</artifactId>
@@ -17,13 +18,13 @@
     </properties>
 
     <modules>
-        <module>portal</module>
-        <module>cic</module>
-        <module>portal-cic</module>
-        <module>start-pages</module>
-        <module>ccp-checker</module>
-        <module>esm</module>
-        <module>ccpimport</module>
-        <module>tfc-properties</module>
+        <module>portal-config</module>
+        <module>cic-config</module>
+        <module>portal-cic-config</module>
+        <module>start-pages-config</module>
+        <module>ccp-checker-config</module>
+        <module>esm-config</module>
+        <module>ccpimport-config</module>
+        <module>tfc-properties-config</module>
     </modules>
 </project>
