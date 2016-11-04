@@ -13,7 +13,7 @@
             <directory>${env}</directory>
             <useDefaultExcludes>true</useDefaultExcludes>
             <includes>
-                <include>tfc-properties.properties</include>
+                <include>servicesPID.properties</include>
             </includes>
         </fileSet>
     </fileSets>
