@@ -24,7 +24,7 @@
         <module>sit-one</module>
         <module>fs-pt-one</module>
         <module>fs-sit</module>
-        <module>nft</module>
+        <module>fs-nft</module>
         <module>prod</module>
         <module>ci-master</module>
         <module>misc</module>
