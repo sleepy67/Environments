@@ -7,13 +7,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.atos.tfc.environments.nft</groupId>
-    <artifactId>nft</artifactId>
-    <description>NFT external configuration</description>
+    <groupId>net.atos.tfc.environments.fs-nft</groupId>
+    <artifactId>fs-nft</artifactId>
+    <description>FS NFT external configuration</description>
     <packaging>pom</packaging>
 
     <properties>
-        <env>nft</env>
+        <env>fs-nft</env>
     </properties>
 
     <modules>
