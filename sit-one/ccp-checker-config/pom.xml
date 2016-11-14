@@ -8,7 +8,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>ccp-checker-config</artifactId>
-    <description>NFT ccp checker configuration</description>
+    <description>SIT 1 ccp checker configuration</description>
 
     <dependencies>
         <dependency>
