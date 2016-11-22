@@ -7,7 +7,7 @@ CONTAINERS={{TFC.CONTAINERS}}
 
 mkdir /appl/builddir/$ccp_import_version
 wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=ccpimport&v=$ccp_import_version&r=public&p=zip" -O "/appl/builddir/$ccp_import_version/tfc-ccpimport-$ccp_import_version.zip"
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.prod&a=ccpimport-config&v=$config_version&r=public&p=zip" -O "/appl/builddir/$ccp_import_version/config-properties-$config_version.zip"
+wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=ccpimport-config&v=$config_version&r=public&p=zip" -O "/appl/builddir/$ccp_import_version/config-properties-$config_version.zip"
 
 
 unzip -o /appl/builddir/$ccp_import_version/config-properties-$config_version.zip -d /appl/builddir/$ccp_import_version
