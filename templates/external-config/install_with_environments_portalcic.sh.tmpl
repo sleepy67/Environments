@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+#Script should be run as playadm user
+
+##Editable Section----------
+Portal_Version=2.1.1
+CIC_Version=2.1.1
+Config_Version=2.1.2
+CI_SERVER={{TFC.CI_SERVER}}
+##---------------------------
+
+
+wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$Portal_Version&r=public&p=zip" -O "tfc-portal-$Portal_Version.zip"
+wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-cic&v=$CIC_Version&r=public&p=zip" -O "tfc-cic-$CIC_Version.zip"
+
+wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.prod&a=portal-cic-config&v=$Config_Version&r=public&p=zip" -O "portal-cic-config-$Config_Version.zip"
+wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.prod&a=cic-config&v=$Config_Version&r=public&p=zip" -O "cic-config-$Config_Version.zip"
+
+chmod 660 /appl/builddir/tfc-portal-$Portal_Version.zip
+chmod 660 /appl/builddir/tfc-cic-$CIC_Version.zip
+
+unzip /appl/builddir/tfc-portal-$Portal_Version.zip -d /appl/tfc/play
+mv /appl/tfc/play/tfc-portal-$Portal_Version/ /appl/tfc/play/tfc-portal-cic-$Portal_Version/
+ln -sfn /appl/tfc/play/tfc-portal-cic-$Portal_Version /appl/tfc/play/latest-portal-cic
+
+unzip /appl/builddir/tfc-cic-$CIC_Version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-cic-$CIC_Version /appl/tfc/play/latest-cic
+
+unzip -o portal-cic-config-$Config_Version.zip -d /appl/tfc/play/latest-portal-cic/conf/
+unzip -o cic-config-$Config_Version.zip -d /appl/tfc/play/latest-cic/conf/
+
+chmod 644 /appl/tfc/play/latest-portal-cic/conf/application.conf
+chmod 644 /appl/tfc/play/latest-cic/conf/application.conf
+
+#quick cic resolver
+sed -i '/"Module"/s/enabled/#enabled'/ /appl/tfc/play/latest-cic/conf/application.conf
