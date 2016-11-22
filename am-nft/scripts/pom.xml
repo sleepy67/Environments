@@ -66,7 +66,7 @@
         <resources>
             <resource>
                 <directory>config</directory>
-                <targetPath>${project.basedir}</targetPath>
+                <targetPath>${project.basedir}/${env}</targetPath>
                 <filtering>true</filtering>
             </resource>
         </resources>
