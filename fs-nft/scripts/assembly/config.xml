@@ -10,7 +10,7 @@
 <fileSets>
         <fileSet>
             <outputDirectory></outputDirectory>
-            <directory>${project.basedir}</directory>
+            <directory>${env}</directory>
             <useDefaultExcludes>true</useDefaultExcludes>
             <includes>
                 <include>*.sh</include>
