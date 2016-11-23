@@ -12,8 +12,8 @@ CI_SERVER={{TFC.CI_SERVER}}
 wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$Portal_Version&r=public&p=zip" -O "tfc-portal-$Portal_Version.zip"
 wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-cic&v=$CIC_Version&r=public&p=zip" -O "tfc-cic-$CIC_Version.zip"
 
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.prod&a=portal-cic-config&v=$Config_Version&r=public&p=zip" -O "portal-cic-config-$Config_Version.zip"
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.prod&a=cic-config&v=$Config_Version&r=public&p=zip" -O "cic-config-$Config_Version.zip"
+wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=portal-cic-config&v=$Config_Version&r=public&p=zip" -O "portal-cic-config-$Config_Version.zip"
+wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=cic-config&v=$Config_Version&r=public&p=zip" -O "cic-config-$Config_Version.zip"
 
 chmod 660 /appl/builddir/tfc-portal-$Portal_Version.zip
 chmod 660 /appl/builddir/tfc-cic-$CIC_Version.zip
