@@ -19,7 +19,7 @@ scp /appl/builddir/$ccp_import_version/tfc-ccpimport-$ccp_import_version.zip /ap
 ssh $i "unzip -o /appl/builddir/$ccp_import_version/tfc-ccpimport-$ccp_import_version.zip -d /appl/builddir/$ccp_import_version/ && \
  mv /appl/builddir/$ccp_import_version/ccpimport.sh /appl/builddir/$ccp_import_version/CCPIMPORT.sh && \
  chmod 770 /appl/builddir/$ccp_import_version/CCPIMPORT.sh && \
- chmod 660 /appl/builddir/$ccp_import_version/ccpimport-$ccp_import_version.jar && \
+ chmod 770 /appl/builddir/$ccp_import_version/ccpimport-$ccp_import_version.jar && \
  cp /appl/builddir/$ccp_import_version/ccpimport-$ccp_import_version.jar /appl/tfc/portal/ccpimport/ && \
  cp /appl/builddir/$ccp_import_version/CCPIMPORT.sh /appl/tfc/portal/ccpimport/scripts && \
  chmod 660 /appl/builddir/$ccp_import_version/ccpimport.properties && \
