@@ -22,6 +22,7 @@
         <module>templates</module>
         <module>pt-one</module>
         <module>sit-one</module>
+        <module>sit-two</module>
         <module>fs-pt-one</module>
         <module>fs-sit</module>
         <module>fs-nft</module>
