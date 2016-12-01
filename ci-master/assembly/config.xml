@@ -10,7 +10,7 @@
     <fileSets>
         <fileSet>
             <outputDirectory></outputDirectory>
-            <directory>ci-master</directory>
+            <directory>${env}</directory>
             <useDefaultExcludes>true</useDefaultExcludes>
             <includes>
                 <include>ProjectDetails.json</include>
