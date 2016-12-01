@@ -25,6 +25,5 @@
         <module>esm-config</module>
         <module>ccpimport-config</module>
         <module>tfc-properties-config</module>
-        <module>scripts</module>
     </modules>
 </project>
