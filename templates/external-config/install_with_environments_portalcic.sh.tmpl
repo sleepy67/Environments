@@ -8,12 +8,24 @@ Config_Version=2.1.2
 CI_SERVER={{TFC.CI_SERVER}}
 ##---------------------------
 
+checker()
+{
+wget $1
+if [ $? -eq 0 ]
+then
+echo "-----------got that one------------"
+else
+echo "-----------failed------------------"
+rm -f *.zip
+exit $?
+fi
+}
 
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$Portal_Version&r=public&p=zip" -O "tfc-portal-$Portal_Version.zip"
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-cic&v=$CIC_Version&r=public&p=zip" -O "tfc-cic-$CIC_Version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$Portal_Version&r=public&p=zip -O tfc-portal-$Portal_Version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-cic&v=$CIC_Version&r=public&p=zip -O tfc-cic-$CIC_Version.zip"
 
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=portal-cic-config&v=$Config_Version&r=public&p=zip" -O "portal-cic-config-$Config_Version.zip"
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=cic-config&v=$Config_Version&r=public&p=zip" -O "cic-config-$Config_Version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=portal-cic-config&v=$Config_Version&r=public&p=zip -O portal-cic-config-$Config_Version.zip"
+cherker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=cic-config&v=$Config_Version&r=public&p=zip -O cic-config-$Config_Version.zip"
 
 chmod 660 /appl/builddir/tfc-portal-$Portal_Version.zip
 chmod 660 /appl/builddir/tfc-cic-$CIC_Version.zip
