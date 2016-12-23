@@ -1,0 +1,61 @@
+#!/usr/bin/env bash
+##Run as fuseadm
+
+##--Editable Section---------
+batchJobs_version=???
+config_version=???
+##---------------------------
+
+CI_SERVER={{TFC.CI_SERVER}}
+CONTAINERS={{TFC.CONTAINERS}}
+
+artifact1=EOICheckerForCIC
+artifact2=IncompletePayRecon
+artifact3=ParentAppCleanup
+artifact4=ReconfirmationReminder
+artifact5=SessionCleanup
+
+folder0=/appl/builddir/batchjobs
+folder1=/appl/tfc/portal/$artifact1/
+folder2=/appl/tfc/portal/$artifact2/
+folder3=/appl/tfc/portal/$artifact3/
+folder4=/appl/tfc/portal/$artifact4/
+folder5=/appl/tfc/portal/$artifact5/
+
+checker()
+{
+wget $1
+if [ $? -eq 0 ]
+then
+echo "-----------got that one------------"
+else
+echo "-----------failed------------------"
+rm -f *.zip
+exit $?
+fi
+}
+
+rm $folder0/*
+checker  "--content-disposition http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc&a=$artifact1&v=$batchJobs_version&r=public&p=zip -O $folder0/$artifact1-$batchJobs_version.zip"
+checker  "--content-disposition http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc&a=$artifact2&v=$batchJobs_version&r=public&p=zip -O $folder0/$artifact2-$batchJobs_version.zip"
+checker  "--content-disposition http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc&a=$artifact3&v=$batchJobs_version&r=public&p=zip -O $folder0/$artifact3-$batchJobs_version.zip"
+checker  "--content-disposition http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc&a=$artifact4&v=$batchJobs_version&r=public&p=zip -O $folder0/$artifact4-$batchJobs_version.zip"
+checker  "--content-disposition http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc&a=$artifact5&v=$batchJobs_version&r=public&p=zip -O $folder0/$artifact5-$batchJobs_version.zip"
+checker  "--content-disposition http://$CI_Server/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=batch-jobs-config&v=$batchJobs_version&r=public&p=zip -O $folder0/batch-jobs-config-$config_version.zip"
+
+
+for i in "${Containers[@]}"
+do
+ssh $i "rm -rf $folder0 && \
+mkdir $folder0"
+
+scp $folder0/*.zip @$i:$folder0
+
+ssh $i "unzip -o $folder0/$artifact1-$batchJobs_version.zip -d $folder1 && \
+  unzip -o $folder0/$artifact2-$batchJobs_version.zip -d $folder2 && \
+  unzip -o $folder0/$artifact3-$batchJobs_version.zip -d $folder3 && \
+  unzip -o $folder0/$artifact4-$batchJobs_version.zip -d $folder4 && \
+  unzip -o $folder0/$artifact5-$batchJobs_version.zip -d $folder5 && \
+  unzip -o $folder0/batch-jobs-config-$config_version -d $folder0 && \
+  echo $folder1 $folder2 $folder3 $folder4 $folder5 | xargs -n 1 cp $folder0/job.properties"
+done
