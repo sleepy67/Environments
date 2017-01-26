@@ -18,8 +18,8 @@ wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redir
 chmod 660 /appl/builddir/tfc-portal-$Portal_Version.zip
 chmod 660 /appl/builddir/tfc-cic-$CIC_Version.zip
 
-unzip /appl/builddir/tfc-portal-$Portal_Version.zip -d /appl/tfc/play
-mv /appl/tfc/play/tfc-portal-$Portal_Version/ /appl/tfc/play/tfc-portal-cic-$Portal_Version/
+unzip /appl/builddir/tfc-portal-$Portal_Version.zip -d /appl/builddir
+mv /appl/builddir/tfc-portal-$Portal_Version/ /appl/tfc/play/tfc-portal-cic-$Portal_Version/
 ln -sfn /appl/tfc/play/tfc-portal-cic-$Portal_Version /appl/tfc/play/latest-portal-cic
 
 unzip /appl/builddir/tfc-cic-$CIC_Version.zip -d /appl/tfc/play
