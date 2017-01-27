@@ -10,15 +10,27 @@ esm_config_version=???
 CI_SERVER={{TFC.CI_SERVER}}
 CONTAINERS={{TFC.CONTAINERS}}
 
+checker()
+{
+wget $1
+if [ $? -eq 0 ]
+then
+echo "-----------got that one------------"
+else
+echo "-----------failed------------------"
+rm -f *.zip
+exit $?
+fi
+}
+
 if [ ! -d /appl/builddir/${esm_version} ]; then
   mkdir /appl/builddir/${esm_version}
 fi
 
-#Get the esm application
-wget -c --content-disposition "http://${CI_SERVER}/service/local/artifact/maven/redirect?r=releases&g=net.atos.tfc&a=ExternalServicesMock&v=${esm_version}&e=zip" -P "/appl/builddir/${esm_version}"
 
-#and the esm configuration
-wget -c --content-disposition "http://${CI_SERVER}/service/local/artifact/maven/redirect?r=releases&g=net.atos.tfc.environments.${env}&a=esm-config&v=${esm_config_version}&e=zip" -P "/appl/builddir/${esm_version}"
+
+checker "--content-disposition http://${CI_SERVER}/service/local/artifact/maven/redirect?r=releases&g=net.atos.tfc&a=ExternalServicesMock&v=${esm_version}&e=zip -P /appl/builddir/${esm_version}"
+checker "--content-disposition http://${CI_SERVER}/service/local/artifact/maven/redirect?r=releases&g=net.atos.tfc.environments.${env}&a=esm-config&v=${esm_config_version}&e=zip -P /appl/builddir/${esm_version}"
 
 for i in "${CONTAINERS[@]}"
 do

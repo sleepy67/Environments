@@ -10,13 +10,26 @@ CCP_Checker_Version=$Portal_Version
 
 CI_SERVER={{TFC.CI_SERVER}}
 
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$Portal_Version&r=public&p=zip" -O "tfc-portal-$Portal_Version.zip"
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-start-pages&v=$Start_Pages_Version&r=public&p=zip" -O "tfc-start-pages-$Start_Pages_Version.zip"
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-ccp-checker&v=$CCP_Checker_Version&r=public&p=zip" -O "tfc-ccp-checker-$CCP_Checker_Version.zip"
+checker()
+{
+wget $1
+if [ $? -eq 0 ]
+then
+echo "-----------got that one------------"
+else
+echo "-----------failed------------------"
+rm -f *.zip
+exit $?
+fi
+}
 
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=portal-config&v=$Config_Version&r=public&p=zip" -O "portal-config-$Config_Version.zip"
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=start-pages-config&v=$Config_Version&r=public&p=zip" -O "start-pages-config-$Config_Version.zip"
-wget --content-disposition "http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=ccp-checker-config&v=$Config_Version&r=public&p=zip" -O "ccp-checker-config-$Config_Version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$Portal_Version&r=public&p=zip -O tfc-portal-$Portal_Version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-start-pages&v=$Start_Pages_Version&r=public&p=zip -O tfc-start-pages-$Start_Pages_Version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-ccp-checker&v=$CCP_Checker_Version&r=public&p=zip -O tfc-ccp-checker-$CCP_Checker_Version.zip"
+
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=portal-config&v=$Config_Version&r=public&p=zip -O portal-config-$Config_Version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=start-pages-config&v=$Config_Version&r=public&p=zip -O start-pages-config-$Config_Version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=ccp-checker-config&v=$Config_Version&r=public&p=zip -O ccp-checker-config-$Config_Version.zip"
 
 chmod 660 /appl/builddir/tfc-portal-$Portal_Version.zip
 chmod 660 /appl/builddir/tfc-start-pages-$Start_Pages_Version.zip
