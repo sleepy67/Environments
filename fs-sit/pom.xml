@@ -17,6 +17,7 @@
     </properties>
 
     <modules>
+        <module>batch-jobs-config</module>
         <module>portal-config</module>
         <module>cic-config</module>
         <module>portal-cic-config</module>
