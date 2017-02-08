@@ -28,6 +28,7 @@
         <module>fs-nft</module>
 		<module>am-nft</module>
         <module>prod</module>
+        <module>training</module>
         <module>ci-master</module>
         <module>misc</module>
     </modules>
