@@ -7,13 +7,13 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.atos.tfc.environments.am-nft</groupId>
-    <artifactId>am-nft</artifactId>
-    <description>AM-NFT external configuration</description>
+    <groupId>net.atos.tfc.environments.training</groupId>
+    <artifactId>training</artifactId>
+    <description>TRAINING external configuration</description>
     <packaging>pom</packaging>
 
     <properties>
-        <env>am-nft</env>
+        <env>training</env>
     </properties>
 
     <modules>
