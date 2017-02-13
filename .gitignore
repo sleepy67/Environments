@@ -3,3 +3,13 @@
 *.project
 **/target/
 **/.settings
+**/config/
+**/am-nft/
+**/fs-nft/
+**/fs-pt-one/
+**/fs-sit/
+**/prod/
+**/pt-one/
+**/sit-one/
+**/sit-two/
+**/training/
