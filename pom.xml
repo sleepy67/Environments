@@ -30,6 +30,7 @@
         <module>prod</module>
         <module>ci-master</module>
         <module>misc</module>
+        <module>training</module>
     </modules>
     <properties>
         <env>PLACEHOLDER</env>
