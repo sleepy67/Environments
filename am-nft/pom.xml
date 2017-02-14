@@ -18,14 +18,14 @@
 
     <modules>
         <module>batch-jobs-config</module>
-        <module>portal-config</module>
-        <module>cic-config</module>
-        <module>portal-cic-config</module>
-        <module>start-pages-config</module>
         <module>ccp-checker-config</module>
-        <module>esm-config</module>
         <module>ccpimport-config</module>
+        <module>cic-config</module>
+        <module>esm-config</module>
+        <module>portal-cic-config</module>
+        <module>portal-config</module>
+        <module>scripts</module>
+        <module>start-pages-config</module>
         <module>tfc-properties-config</module>
-		<module>scripts</module>
     </modules>
 </project>
