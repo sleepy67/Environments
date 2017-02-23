@@ -1,0 +1,47 @@
+#!/usr/bin/env bash
+#Script should be run as playadm user
+
+##Editable Section----------
+portal_version=???
+cic_version=???
+environments_version=???
+CI_SERVER={{TFC.CI_SERVER}}
+##---------------------------
+
+checker()
+{
+wget $1
+if [ $? -eq 0 ]
+then
+echo "-----------got that one------------"
+else
+echo "-----------failed------------------"
+rm -f *.zip
+exit $?
+fi
+}
+
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$portal_version&r=public&p=zip -O tfc-portal-$portal_version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-cic&v=$cic_version&r=public&p=zip -O tfc-cic-$cic_version.zip"
+
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=portal-cic-config&v=$environments_version&r=public&p=zip -O portal-cic-config-$environments_version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=cic-config&v=$environments_version&r=public&p=zip -O cic-config-$environments_version.zip"
+
+chmod 660 /appl/builddir/tfc-portal-$portal_version.zip
+chmod 660 /appl/builddir/tfc-cic-$cic_version.zip
+
+unzip /appl/builddir/tfc-portal-$portal_version.zip -d /appl/builddir
+mv /appl/builddir/tfc-portal-$portal_version/ /appl/tfc/play/tfc-portal-cic-$portal_version/
+ln -sfn /appl/tfc/play/tfc-portal-cic-$portal_version /appl/tfc/play/latest-portal-cic
+
+unzip /appl/builddir/tfc-cic-$cic_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-cic-$cic_version /appl/tfc/play/latest-cic
+
+unzip -o portal-cic-config-$environments_version.zip -d /appl/tfc/play/latest-portal-cic/conf/
+unzip -o cic-config-$environments_version.zip -d /appl/tfc/play/latest-cic/conf/
+
+chmod 644 /appl/tfc/play/latest-portal-cic/conf/application.conf
+chmod 644 /appl/tfc/play/latest-cic/conf/application.conf
+
+#quick cic resolver
+sed -i '/"Module"/s/enabled/#enabled'/ /appl/tfc/play/latest-cic/conf/application.conf
