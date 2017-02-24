@@ -23,6 +23,12 @@ exit $?
 fi
 }
 
+#cleanup
+rm /appl/builddir/*.zip
+ls -dt /appl/tfc/play/tfc-ccp-checker* | tail -n +3 | xargs rm -rf
+ls -dt /appl/tfc/play/tfc-start-pages* | tail -n +3 | xargs rm -rf
+ls -dt /appl/tfc/play/tfc-portal* | tail -n +3 | xargs rm -rf
+
 checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$portal_version&r=public&p=zip -O tfc-portal-$portal_version.zip"
 checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-start-pages&v=$start_pages_version&r=public&p=zip -O tfc-start-pages-$start_pages_version.zip"
 checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-ccp-checker&v=$ccp_checker_version&r=public&p=zip -O tfc-ccp-checker-$ccp_checker_version.zip"
@@ -48,7 +54,6 @@ ln -sfn /appl/tfc/play/tfc-ccp-checker-$ccp_checker_version /appl/tfc/play/lates
 unzip -o portal-config-$environments_version.zip -d /appl/tfc/play/latest-portal/conf/
 unzip -o start-pages-config-$environments_version.zip -d /appl/tfc/play/latest-start-pages/conf/
 unzip -o ccp-checker-config-$environments_version.zip -d /appl/tfc/play/latest-ccp-checker/conf/
-
 
 #chmod configs
 chmod 644 /appl/tfc/play/latest-portal/conf/application.conf
