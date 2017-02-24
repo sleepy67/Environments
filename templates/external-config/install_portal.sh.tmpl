@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+#Script should be run as playadm user and from /appl/builddir
+
+##Editable Section----------
+portal_version=???
+environments_version=???
+start_pages_version=$portal_version
+ccp_checker_version=$portal_version
+##---------------------------
+
+CI_SERVER={{TFC.CI_SERVER}}
+
+checker()
+{
+wget $1
+if [ $? -eq 0 ]
+then
+echo "-----------got that one------------"
+else
+echo "-----------failed------------------"
+rm -f *.zip
+exit $?
+fi
+}
+
+#cleanup
+rm /appl/builddir/*.zip
+ls -dt /appl/tfc/play/tfc-ccp-checker* | tail -n +3 | xargs rm -rf
+ls -dt /appl/tfc/play/tfc-start-pages* | tail -n +3 | xargs rm -rf
+ls -dt /appl/tfc/play/tfc-portal* | tail -n +3 | xargs rm -rf
+
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-portal&v=$portal_version&r=public&p=zip -O tfc-portal-$portal_version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-start-pages&v=$start_pages_version&r=public&p=zip -O tfc-start-pages-$start_pages_version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc&a=tfc-ccp-checker&v=$ccp_checker_version&r=public&p=zip -O tfc-ccp-checker-$ccp_checker_version.zip"
+
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=portal-config&v=$environments_version&r=public&p=zip -O portal-config-$environments_version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=start-pages-config&v=$environments_version&r=public&p=zip -O start-pages-config-$environments_version.zip"
+checker "--content-disposition http://$CI_SERVER/service/local/artifact/maven/redirect?g=net.atos.tfc.environments.${env}&a=ccp-checker-config&v=$environments_version&r=public&p=zip -O ccp-checker-config-$environments_version.zip"
+
+chmod 660 /appl/builddir/tfc-portal-$portal_version.zip
+chmod 660 /appl/builddir/tfc-start-pages-$start_pages_version.zip
+chmod 660 /appl/builddir/tfc-ccp-checker-$ccp_checker_version.zip
+
+unzip /appl/builddir/tfc-portal-$portal_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-portal-$portal_version /appl/tfc/play/latest-portal
+
+unzip /appl/builddir/tfc-start-pages-$start_pages_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-start-pages-$start_pages_version /appl/tfc/play/latest-start-pages
+
+unzip /appl/builddir/tfc-ccp-checker-$ccp_checker_version.zip -d /appl/tfc/play
+ln -sfn /appl/tfc/play/tfc-ccp-checker-$ccp_checker_version /appl/tfc/play/latest-ccp-checker
+
+#unzip configs to play
+unzip -o portal-config-$environments_version.zip -d /appl/tfc/play/latest-portal/conf/
+unzip -o start-pages-config-$environments_version.zip -d /appl/tfc/play/latest-start-pages/conf/
+unzip -o ccp-checker-config-$environments_version.zip -d /appl/tfc/play/latest-ccp-checker/conf/
+
+
+#chmod configs
+chmod 644 /appl/tfc/play/latest-portal/conf/application.conf
+chmod 644 /appl/tfc/play/latest-start-pages/conf/application.conf
+chmod 644 /appl/tfc/play/latest-ccp-checker/conf/application.conf
