@@ -25,6 +25,7 @@
         <module>esm-config</module>
         <module>ccpimport-config</module>
         <module>tfc-properties-config</module>
-		<module>scripts</module>
+	<module>scripts</module>
+	    <module>batch-jobs-config</module>
     </modules>
 </project>
