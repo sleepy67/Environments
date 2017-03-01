@@ -1,0 +1,39 @@
+# Transfer Topup file onto AXWAY SFTP server
+# Note replace ENVIRONM variable with correct environment
+# Note replace USRPASS variable with correct Axway Username and Password
+export ENVIRONM={{TFC.ENVIRONMENT_IDENTIFIER}}
+export SOURCEDIR=/appl/filestore/$ENVIRONM/top_up_report
+export ARCHIVEDIR=/appl/filestore/$ENVIRONM/top_up_report_archive
+export LOGDIR=/appl/tfc/portal/top_up_report/scripts/logs
+export LOGFILE=$LOGDIR/`basename $0`.$$.`date +%F.%H:%M:%S`
+export AXWAYSERVER={{TFC.AXWAY_SERVER}}
+export USRPASSW={{TFC.AXWAY_USERPW}}
+cd $SOURCEDIR
+echo $SOURCEDIR >>$LOGFILE 2>&1
+AFILES=`ls *.pdf` >>$LOGFILE 2>&1
+echo $AFILES >>$LOGFILE 2>&1
+if [[ $AFILES = "" ]]; then
+STATUS=5
+# No Topup files available!
+echo "No Topup file available" >>$LOGFILE 2>&1
+echo $STATUS >>$LOGFILE 2>&1
+echo "STATUS=$STATUS LOGFILE="$LOGFILE
+exit $STATUS
+fi
+for FL in $AFILES
+do
+echo curl --connect-timeout 30 --insecure sftp://$AXWAYSERVER/ --user $USRPASSW  -T $FL --ftp-create-dirs >>$LOGFILE 2>&1
+curl --connect-timeout 30 --insecure sftp://$AXWAYSERVER/ --user $USRPASSW  -T $FL --ftp-create-dirs >>$LOGFILE 2>&1
+STATUS=$?
+echo $STATUS >>$LOGFILE 2>&1
+if [ $STATUS != "0" ]; then
+echo "FAILED FILE: "$FL >>$LOGFILE 2>&1
+echo $STATUS >>$LOGFILE 2>&1
+echo "STATUS=$STATUS LOGFILE="$LOGFILE
+exit $STATUS
+fi
+mv $FL $ARCHIVEDIR >>$LOGFILE 2>&1
+sleep 1
+done
+echo "STATUS=$STATUS LOGFILE="$LOGFILE
+exit 0
