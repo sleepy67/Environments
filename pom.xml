@@ -14,7 +14,7 @@
 
     <groupId>net.atos.tfc.environments</groupId>
     <artifactId>EnvironmentConfig</artifactId>
-    <version>2.2.8-SNAPSHOT</version>
+    <version>${global.version}</version>
     <packaging>pom</packaging>
     <description>TFC Environments Parent</description>
 
@@ -34,6 +34,7 @@
     </modules>
     <properties>
         <env>PLACEHOLDER</env>
+        <global.version>2.2.8-SNAPSHOT</global.version>
     </properties>
     <build>
         <pluginManagement>
