@@ -56,7 +56,7 @@ ssh $i "unzip -o $folder0/EOICheckerForCIC-$batchjobs_version.zip -d $folder1 &&
         unzip -o $folder0/RsaOrgNameMigration-$batchjobs_version.zip -d $folder5 && \
         unzip -o $folder0/SessionCleanup-$batchjobs_version.zip -d $folder6 && \
         unzip -o $folder0/batch-jobs-config-$environments_version -d $folder0 && \
-		echo $folder1 $folder2 $folder3 $folder4 $folder5 | xargs -n 1 cp $folder0/job.properties && \
+		echo $folder1 $folder2 $folder3 $folder4 $folder5 $folder6 | xargs -n 1 cp $folder0/job.properties && \
 		chmod 774 $folder1/*.sh && \
 		chmod 774 $folder2/*.sh && \
 		chmod 774 $folder3/*.sh && \
