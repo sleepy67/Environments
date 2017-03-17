@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <groupId>net.atos.tfc.environments</groupId>
+        <artifactId>EnvironmentConfig</artifactId>
+        <version>2.2.9-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>net.atos.tfc.environments.pt-two</groupId>
+    <artifactId>pt-two</artifactId>
+    <description>PT Drop2 external configuration</description>
+    <packaging>pom</packaging>
+
+    <properties>
+        <env>pt-two</env>
+    </properties>
+
+    <modules>
+    	<module>batch-jobs-config</module>
+        <module>portal-config</module>
+        <module>cic-config</module>
+        <module>portal-cic-config</module>
+        <module>start-pages-config</module>
+        <module>ccp-checker-config</module>
+        <module>esm-config</module>
+        <module>ccpimport-config</module>
+        <module>tfc-properties-config</module>
+		<module>scripts</module>
+    </modules>
+</project>
