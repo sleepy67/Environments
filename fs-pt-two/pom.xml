@@ -3,17 +3,17 @@
     <parent>
         <groupId>net.atos.tfc.environments</groupId>
         <artifactId>EnvironmentConfig</artifactId>
-        <version>2.2.9-SNAPSHOT</version>
+        <version>2.3.3-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>net.atos.tfc.environments.pt-two</groupId>
-    <artifactId>pt-two</artifactId>
-    <description>PT Drop2 external configuration</description>
+    <groupId>net.atos.tfc.environments.fs-pt-two</groupId>
+    <artifactId>fs-pt-two</artifactId>
+    <description>FS-PT Drop2 external configuration</description>
     <packaging>pom</packaging>
 
     <properties>
-        <env>pt-two</env>
+        <env>fs-pt-two</env>
     </properties>
 
     <modules>
