@@ -26,6 +26,7 @@
         <module>sit-two</module>
         <module>fs-pt-one</module>
         <module>fs-sit</module>
+        <module>local</module>
         <module>fs-nft</module>
 		<module>am-nft</module>
         <module>prod</module>
