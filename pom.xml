@@ -25,6 +25,7 @@
         <module>fs-pt-one</module>
         <module>fs-pt-two</module>
         <module>fs-sit</module>
+        <module>local</module>
         <module>misc</module>
         <module>prod</module>
         <module>pt-one</module>
