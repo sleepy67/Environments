@@ -19,19 +19,19 @@
     <description>TFC Environments Parent</description>
 
     <modules>
-        <module>templates</module>
-        <module>pt-one</module>
-        <module>fs-pt-two</module>
-        <module>sit-one</module>
-        <module>sit-two</module>
+        <module>ci-master</module>
+        <module>am-nft</module>
+        <module>fs-nft</module>
         <module>fs-pt-one</module>
+        <module>fs-pt-two</module>
         <module>fs-sit</module>
         <module>local</module>
-        <module>fs-nft</module>
-		<module>am-nft</module>
-        <module>prod</module>
-        <module>ci-master</module>
         <module>misc</module>
+        <module>prod</module>
+        <module>pt-one</module>
+        <module>sit-one</module>
+        <module>sit-two</module>
+        <module>templates</module>
         <module>training</module>
     </modules>
     <properties>
