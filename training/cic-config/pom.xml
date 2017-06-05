@@ -3,7 +3,7 @@
     <parent>
         <groupId>net.atos.tfc.environments.training</groupId>
         <artifactId>training</artifactId>
-        <version>2.4.3-SNAPSHOT</version>
+        <version>2.4.3</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
