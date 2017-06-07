@@ -14,6 +14,8 @@
             <useDefaultExcludes>true</useDefaultExcludes>
             <includes>
                 <include>servicesPID.properties</include>
+                <include>io.fabric8.agent.properties</include>
+                <include>org.apache.aries.transaction.properties</include>
             </includes>
         </fileSet>
     </fileSets>
