@@ -19,9 +19,9 @@ pipeline {
                 sh 'mvn clean'
             }
         }
-        stage('Publish'){
+        stage('Deploy'){
             steps {
-                sh 'mvn publish -Dmaven.test.skip=true'
+                sh 'mvn deploy -Dmaven.test.skip=true'
                 archiveArtifacts 'target/*.zip'
             }
         }
