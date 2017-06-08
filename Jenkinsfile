@@ -23,7 +23,6 @@ pipeline {
             steps {
                 sh 'mvn deploy -Dmaven.test.skip=true'
                 archiveArtifacts 'target/*.zip'
-                archiveArtifacts 'target/*.jar'
             }
         }
     }
