@@ -9,7 +9,6 @@ pipeline {
         MAVEN_CONFIG = "/var/maven/.m2"
         MAVEN_OPTS = "-Duser.home=/var/maven ${env.JAVA_OPTS}"
         JAVA_TOOL_OPTIONS = "${env.JAVA_OPTS}"
-        NEXUS_URL = "${env.NEXUS_URL}"
     }
     stages {
         stage('Clean') {
@@ -22,8 +21,9 @@ pipeline {
         }
         stage('Deploy'){
             steps {
-                sh 'mvn deploy -Dmaven.test.skip=true -Dnexus.url=$NEXUS_URL'
+                sh 'mvn deploy -Dmaven.test.skip=true'
                 archiveArtifacts 'target/*.zip'
+                archiveArtifacts 'target/*.jar'
             }
         }
     }
