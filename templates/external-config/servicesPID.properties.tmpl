@@ -205,14 +205,15 @@ rsa.telephone.challenge.url=/ccp/acc/rsaphonenumbers
 rsa.telephone.threshold={{TFC.rsa.telephone.threshold}}
 rsa.org.name.ccp=CCP
 rsa.org.name.parent=PARENTS
-rsa.cache.nodelete={{TFC.rsa.cache.nodelete}}
+rsa.cache.nodelete=rsaphonenumbers,rsaphonedisplay,rsaquestionswarning,stepupchallenge,rsaquestionsfailure
+rsa.allowed.pages=/par/acc/buildplannedoutage,/par/acc/maintenanceon,/par/acc/passwordentryfailure,/par/acc/passwordentryrsa,/par/acc/passwordentrywarning,/par/acc/resetpassword,/par/acc/resetpasswordsuccess,/par/acc/rsaphonenumbers,/par/acc/rsaphonedisplay,/par/acc/rsaquestionswarning,/par/acc/stepupchallenge,/par/acc/rsaquestionsfailure,/parlogin,/par/app/tfcentrypoint
 
 #Thaler
-thaler.externalapplication={{TFC.thaler.externalapplication}}
-thaler.externalreferenceprefix={{TFC.thaler.externalreferenceprefix}}
+thaler.externalapplication=PTL
+thaler.externalreferenceprefix=PTL
 thaler.password={{TFC.thaler.password}}
 thaler.url={{TFC.thaler.url}}
-thaler.username={{TFC.thaler.username}}
+thaler.username=portal
 
 #VRD
 vrd.available={{TFC.vrd.available}}
@@ -237,6 +238,5 @@ wlpayment.proxy={{TFC.wlpayment.proxy}}
 wlpayment.seal.key={{TFC.wlpayment.seal.key}}
 
 #Non Environment Specific
-rsa.allowed.pages=/par/acc/buildplannedoutage,/par/acc/maintenanceon,/par/acc/passwordentryfailure,/par/acc/passwordentryrsa,/par/acc/passwordentrywarning,/par/acc/resetpassword,/par/acc/resetpasswordsuccess,/par/acc/rsaphonenumbers,/par/acc/rsaphonedisplay,/par/acc/rsaquestionswarning,/par/acc/stepupchallenge,/par/acc/rsaquestionsfailure,/parlogin,/par/app/tfcentrypoint
 postcode.pattern=^((GIR)(0AA)|([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKS-UW]))([0-9][ABD-HJLNP-UW-Z]{2})|(([A-Z]{1,4})(1ZZ))|((BFPO)([0-9]{1,4})))$
 email.pattern=^(?=.{0,56}$).(\\\"([^\\\"r\\\\\\\\]|\\\\\\\\[\\\"r\\\\\\\\])*\\\"|([-a-zA-Z0-9!#$%&'*+/=?^_`{|}~]|(?<!\\.)\\.)*)(?<!\\.)@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,3})$
