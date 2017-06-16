@@ -87,24 +87,24 @@ hmrc.validation.regex.name=^[a-zA-Z]
 hmrc.validation.regex.nino=^[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}[0-9]{6}[A-DFM]{0,1}$
 #hmrc.validation.regex.patternmatch=(?&lt;=\\\n)
 M_leadTime=14
-net.atos.tfc.hmrc.api10.allowed.processing.statuses={{TFC.net.atos.tfc.hmrc.api10.allowed.processing.statuses}}
+net.atos.tfc.hmrc.api10.allowed.processing.statuses=I,R,M,T,X,Y,P,G,H,Q
 net.atos.tfc.hmrc.api10.response.final.delay={{TFC.net.atos.tfc.hmrc.api10.response.final.delay}}
 net.atos.tfc.hmrc.api10.response.redelivery.delay={{TFC.net.atos.tfc.hmrc.api10.response.redelivery.delay}}
 net.atos.tfc.hmrc.api10.response.redelivery.max={{TFC.net.atos.tfc.hmrc.api10.response.redelivery.max}}
-net.atos.tfc.hmrc.api10.simulator.threads={{TFC.net.atos.tfc.hmrc.api10.simulator.threads}}
-net.atos.tfc.hmrc.api9.simulator.threads={{TFC.net.atos.tfc.hmrc.api9.simulator.threads}}
-oauth.applicationheader={{TFC.oauth.applicationheader}}
+net.atos.tfc.hmrc.api10.simulator.threads=15
+net.atos.tfc.hmrc.api9.simulator.threads=5
+oauth.applicationheader=application/vnd.hmrc.1.0+json
 oauth.authUrl={{TFC.oauth.authUrl}}
 oauth.clientid={{TFC.oauth.clientid}}
 oauth.clientsecret={{TFC.oauth.clientsecret}}
 oauth.redirecturl={{TFC.oauth.redirecturl}}
 oauth.refreshUrl={{TFC.oauth.refreshUrl}}
-oauth.retrycount={{TFC.oauth.retrycount}}
+oauth.retrycount=5
 oauth.tokenlocation={{TFC.oauth.tokenlocation}}
 oauth.totpclientid={{TFC.oauth.totpclientid}}
 oauth.totpclientsecret={{TFC.oauth.totpclientsecret}}
 oauth.totpUrl={{TFC.oauth.totpUrl}}
-regulator.mod={{TFC.regulator.mod}}
+regulator.mod=4
 
 #Landing Pages
 landing.page.placeholder.uri={{TFC.landing.page.placeholder.uri}}
