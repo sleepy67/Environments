@@ -25,32 +25,32 @@ TFC.Website.Session.Timeout={{TFC.Website.Session.Timeout}}
 amq.brokerurl={{TFC.amq.brokerurl}}
 amq.pword={{TFC.amq.pword}}
 amq.username={{TFC.amq.username}}
-audit.amq.audit-account-txn.error={{TFC.audit.amq.audit-account-txn.error}}
-audit.amq.audit-account-txn={{TFC.audit.amq.audit-account-txn}}
-audit.amq.audit-auth.error={{TFC.audit.amq.audit-auth.error}}
-audit.amq.audit-auth={{TFC.audit.amq.audit-auth}}
-audit.amq.audit-pag-nav.error={{TFC.audit.amq.audit-pag-nav.error}}
-audit.amq.audit-pag-nav={{TFC.audit.amq.audit-pag-nav}}
-audit.amq.audit-txn.error={{TFC.audit.amq.audit-txn.error}}
-audit.amq.audit-txn={{TFC.audit.amq.audit-txn}}
+audit.amq.audit-account-txn.error=net.atos.tfc.auditing.account.txn.error
+audit.amq.audit-account-txn=net.atos.tfc.auditing.account.txn
+audit.amq.audit-auth.error=net.atos.tfc.auditing.auth.error
+audit.amq.audit-auth=net.atos.tfc.auditing.auth
+audit.amq.audit-pag-nav.error=net.atos.tfc.auditing.pagnav.error
+audit.amq.audit-pag-nav=net.atos.tfc.auditing.pagnav
+audit.amq.audit-txn.error=net.atos.tfc.auditing.txn.error
+audit.amq.audit-txn=net.atos.tfc.auditing.txn
 audit.amq.brokerurl={{TFC.audit.amq.brokerurl}}
 audit.amq.password={{TFC.audit.amq.password}}
 audit.amq.username={{TFC.audit.amq.username}}
-ccpactivation.amq.queuename={{TFC.ccpactivation.amq.queuename}}
+ccpactivation.amq.queuename=CCPActivationQueue
 ccpactivation.retry.delay={{TFC.ccpactivation.retry.delay}}
 ccpactivation.retry.limit={{TFC.ccpactivation.retry.limit}}
-ccpactivationdeclined.amq.queuename={{TFC.ccpactivationdeclined.amq.queuename}}
-ccpactivationfailed.amq.queuename={{TFC.ccpactivationfailed.amq.queuename}}
+ccpactivationdeclined.amq.queuename=CCPActivationDeclinedQueue
+ccpactivationfailed.amq.queuename=CCPActivationFailedQueue
 feedback.incomingq.brokerurl={{TFC.feedback.incomingq.brokerurl}}
 feedback.incomingq.password={{TFC.feedback.incomingq.password}}
-feedback.incomingq.url={{TFC.feedback.incomingq.url}}
+feedback.incomingq.url=jms:queue:FeedbackMessageOutbox
 feedback.incomingq.username={{TFC.feedback.incomingq.username}}
 hmrc.incomingq.brokerurl={{TFC.hmrc.incomingq.brokerurl}}
 hmrc.incomingq.password={{TFC.hmrc.incomingq.password}}
 hmrc.incomingq.username={{TFC.hmrc.incomingq.username}}
-newprimarycontactactivation.amq.queuename={{TFC.newprimarycontactactivation.amq.queuename}}
-newprimarycontactactivationfailed.amq.queuename={{TFC.newprimarycontactactivationfailed.amq.queuename}}
-utrninocleanup.amq.queuename={{TFC.utrninocleanup.amq.queuename}}
+newprimarycontactactivation.amq.queuename=NewPrimaryContactActivationQueue
+newprimarycontactactivationfailed.amq.queuename=NewPrimaryContactActivationFailedQueue
+utrninocleanup.amq.queuename=UtrNinoCleanupQueue
 
 #CSR LDAP Authentication
 net.atos.tfc.authentication.service.csr={{TFC.net.atos.tfc.authentication.service.csr}}
@@ -59,7 +59,7 @@ net.atos.tfc.authentication.service.ldap.admin.password={{TFC.net.atos.tfc.authe
 net.atos.tfc.authentication.service.ldap.auth.type={{TFC.net.atos.tfc.authentication.service.ldap.auth.type}}
 net.atos.tfc.authentication.service.ldap.base.user.dn={{TFC.net.atos.tfc.authentication.service.ldap.base.user.dn}}
 net.atos.tfc.authentication.service.ldap.factory={{TFC.net.atos.tfc.authentication.service.ldap.factory}}
-net.atos.tfc.authentication.service.ldap.server={{TFC.net.atos.tfc.authentication.service.ldap.server}}
+net.atos.tfc.authentication.service.ldap.server=ldap://10.65.64.43:389/
 net.atos.tfc.authentication.service.ldap.uid.attr={{TFC.net.atos.tfc.authentication.service.ldap.uid.attr}}
 
 #HMRC
@@ -107,7 +107,7 @@ oauth.totpUrl={{TFC.oauth.totpUrl}}
 regulator.mod=4
 
 #Landing Pages
-landing.page.placeholder.uri={{TFC.landing.page.placeholder.uri}}
+landing.page.placeholder.uri=/landing
 landing.page.uri={{TFC.landing.page.uri}}
 
 #Message Hub
