@@ -1,18 +1,12 @@
-#feature.jndi = jndi
-#feature.jpa = jpa
-#feature.transaction = transaction
-#feature.hibernate = hibernate
-#feature.connector = connector
-#feature.camel-quartz = camel-quartz
-#feature.cxf-features-clustering = cxf-features-clustering
-#feature.spring-web = spring-web
-#feature.war = war
-
-#    file://${runtime.home}/${karaf.default.repository}@snapshots@id=karaf.${karaf.default.repository},\
-#    file://${runtime.home}/local-repo@snapshots@id=karaf.local-repo,\
+attribute.parents = jboss-fuse-full
+feature.jndi = jndi
+feature.jpa = jpa
+feature.transaction = transaction
+feature.hibernate = hibernate
+feature.connector = connector
+feature.camel-quartz = camel-quartz
+feature.cxf-features-clustering = cxf-features-clustering
+feature.spring-web = spring-web
+feature.war = war
 
 org.ops4j.pax.url.mvn.repositories={{TFC.nexus.url}}
-
-#attribute.parents = jboss-fuse-full
-	
-#org.ops4j.pax.url.mvn.repositories = http://nexus.tfcc.virtualsi.uk:8081/content/repositories/releases
