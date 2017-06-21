@@ -39,7 +39,7 @@ ssh $i "mkdir -p /appl/builddir/${esm_version}"
 scp /appl/builddir/${esm_version}/ExternalServicesMock-${esm_version}.zip /appl/builddir/${esm_version}/esm-config-${environments_version}.zip fuseadm@$i:/appl/builddir/${esm_version}
 ssh $i "unzip -jo /appl/builddir/${esm_version}/ExternalServicesMock-${esm_version}.zip -d /appl/tfc/fuse/esm && \
  chmod 770 /appl/tfc/fuse/esm/ExternalServicesMock-${esm_version}.sh && \
- unzip -jo /appl/builddir/${esm_version}/esm-config-${esm_config_version}.zip -d /appl/tfc/fuse/esm && \
+ unzip -jo /appl/builddir/${esm_version}/esm-config-${environments_version}.zip -d /appl/tfc/fuse/esm && \
  pushd /appl/tfc/fuse/esm && \
  ./ExternalServicesMock-${esm_version}.sh stop && \
  nohup ./ExternalServicesMock-${esm_version}.sh start > /dev/null 2>&1 && \
