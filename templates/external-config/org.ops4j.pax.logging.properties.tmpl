@@ -35,8 +35,8 @@ log4j.appender.out.layout=org.apache.log4j.PatternLayout
 log4j.appender.out.layout.ConversionPattern=%d{ABSOLUTE} | %-5.5p | %-16.16t | %-32.32c{1} | %X{bundle.id} - %X{bundle.name} - %X{bundle.version} | %m%n
 log4j.appender.out.file=${karaf.data}/log/fuse.log
 log4j.appender.out.append=true
-log4j.appender.out.maxFileSize=10MB
-log4j.appender.out.maxBackupIndex=10
+log4j.appender.out.maxFileSize=100MB
+log4j.appender.out.maxBackupIndex=5
 
 # Error Log File appender
 log4j.appender.errorappender=org.apache.log4j.RollingFileAppender
@@ -45,8 +45,8 @@ log4j.appender.errorappender.layout.ConversionPattern=%d{ABSOLUTE} | %-5.5p | %-
 log4j.appender.errorappender.file=${karaf.data}/log/errors.log
 log4j.appender.errorappender.Threshold=WARN
 log4j.appender.errorappender.append=true
-log4j.appender.errorappender.maxFileSize=10MB
-log4j.appender.errorappender.maxBackupIndex=10
+log4j.appender.errorappender.maxFileSize=100MB
+log4j.appender.errorappender.maxBackupIndex=5
 
 # Audit Unprocessed Messages File appender
 log4j.appender.audit=org.apache.log4j.RollingFileAppender
@@ -54,8 +54,8 @@ log4j.appender.audit.layout=org.apache.log4j.PatternLayout
 log4j.appender.audit.layout.ConversionPattern=%d{ABSOLUTE} | %m%n
 log4j.appender.audit.file=${karaf.data}/log/Audit-Unprocessed-Messages.log
 log4j.appender.audit.append=true
-log4j.appender.audit.maxFileSize=10MB
-log4j.appender.audit.maxBackupIndex=10
+log4j.appender.audit.maxFileSize=100MB
+log4j.appender.audit.maxBackupIndex=5
 
 # Sift appender
 log4j.appender.sift=org.apache.log4j.sift.MDCSiftingAppender
