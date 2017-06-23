@@ -17,6 +17,7 @@
                 <include>io.fabric8.agent.properties</include>
                 <include>org.ops4j.pax.logging.properties</include>
                 <include>org.ops4j.pax.url.mvn.properties</include>
+                <include>org.ops4j.pax.web.properties</include>
                 <include>cdc-truststore.jks</include>
                 <include>tfc-user.jks</include>
             </includes>
