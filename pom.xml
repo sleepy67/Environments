@@ -21,6 +21,7 @@
     <modules>
         <module>ci-master</module>
         <module>am-nft</module>
+        <module>demo</module>
         <module>fs-nft</module>
         <module>fs-pt-one</module>
         <module>fs-pt-two</module>
