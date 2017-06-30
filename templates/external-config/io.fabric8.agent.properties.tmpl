@@ -9,4 +9,7 @@ feature.cxf-features-clustering = cxf-features-clustering
 feature.spring-web = spring-web
 feature.war = war
 
-org.ops4j.pax.url.mvn.repositories = {{TFC.nexus.url}}@id=atos
+org.ops4j.pax.url.mvn.repositories = \
+         file:${runtime.home}/${karaf.default.repository}@snapshots@id=karaf-default, \
+		 file:${runtime.data}/maven/upload@snapshots@id=fabric-upload, \
+		 {{TFC.nexus.url}}@id=atos
