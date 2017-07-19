@@ -74,7 +74,7 @@ hmrc.available={{TFC.hmrc.available}}
 hmrc.digitally.excluded.eligibility={{TFC.hmrc.digitally.excluded.eligibility}}
 hmrc.oauth.fault.redirect=false
 hmrc.validate.mock=true
-hmrc.validation.addline.maxlength=28
+hmrc.validation.addline.maxlength=35
 hmrc.validation.family.maxlength=40
 hmrc.validation.family.minlength=2
 hmrc.validation.given.maxlength=26
@@ -152,7 +152,14 @@ net.atos.tfc.message.hub.ISIS.Request.permanent.failure.redelivery.max={{TFC.net
 net.atos.tfc.message.hub.ISIS.Request.permanent.failure.redelivery.delay={{TFC.net.atos.tfc.message.hub.ISIS.Request.permanent.failure.redelivery.delay}}
 net.atos.tfc.message.hub.ISIS.Request.version={{TFC.net.atos.tfc.message.hub.ISIS.Request.version}}
 
-
+# API 19 - CDC Main
+net.atos.tfc.message.hub.secure.api19.api19.cdc-request={{TFC.net.atos.tfc.message.hub.secure.api19.cdc-request}}
+net.atos.tfc.message.hub.secure.api19.cdc-main={{TFC.net.atos.tfc.message.hub.secure.api19.cdc-main}}
+net.atos.tfc.message.hub.secure.api19.request={{TFC.net.atos.tfc.message.hub.secure.api19.request}}
+net.atos.tfc.message.hub.secure.api19.cdc-request-audit={{TFC.net.atos.tfc.message.hub.secure.api19.cdc-request-audit}}
+net.atos.tfc.message.hub.secure.api19.cdc-invalid-request={{TFC.net.atos.tfc.message.hub.secure.api19.cdc-invalid-request}}
+net.atos.tfc.message.hub.secure.api19.cdc-redelivery-request={{TFC.net.atos.tfc.message.hub.secure.api19.cdc-redelivery-request}}
+net.atos.tfc.message.hub.iprocess.endpoint={{TFC.net.atos.tfc.message.hub.iprocess.endpoint}}
 
 #Rest Service Urls
 ccpaccount.restservice.url={{TFC.ccpaccount.restservice.url}}
@@ -241,3 +248,7 @@ wlpayment.seal.key={{TFC.wlpayment.seal.key}}
 #Non Environment Specific
 postcode.pattern=^((GIR)(0AA)|([A-PR-UWYZ]([0-9]{1,2}|([A-HK-Y][0-9]|[A-HK-Y][0-9]([0-9]|[ABEHMNPRV-Y]))|[0-9][A-HJKS-UW]))([0-9][ABD-HJLNP-UW-Z]{2})|(([A-Z]{1,4})(1ZZ))|((BFPO)([0-9]{1,4})))$
 email.pattern=^(?=.{0,56}$).(\\\"([^\\\"r\\\\\\\\]|\\\\\\\\[\\\"r\\\\\\\\])*\\\"|([-a-zA-Z0-9!#$%&'*+/=?^_`{|}~]|(?<!\\.)\\.)*)(?<!\\.)@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,3})$
+
+#API9 Response Holding Page
+holdingpage.wait.time.seconds={{TFC.holdingpage.wait.time.seconds}}
+holdingpage.max.attempts={{TFC.holdingpage.max.attempts}}
