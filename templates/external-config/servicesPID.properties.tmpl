@@ -86,6 +86,8 @@ hmrc.validation.regex.givenname=[a-zA-Z-&amp;.]*
 hmrc.validation.regex.name=^[a-zA-Z]
 hmrc.validation.regex.nino=^[A-CEGHJ-PR-TW-Z]{1}[A-CEGHJ-NPR-TW-Z]{1}[0-9]{6}[A-DFM]{0,1}$
 #hmrc.validation.regex.patternmatch=(?&lt;=\\\n)
+addressline.validation.on=true
+hmrc.validation.address.line.regex=^[A-Za-z0-9 \-,.&'\/()!\\]{]{1,28}
 M_leadTime=14
 net.atos.tfc.hmrc.api10.allowed.processing.statuses=I,R,M,T,X,Y,P,G,H,Q
 net.atos.tfc.hmrc.api10.response.final.delay=30000
@@ -150,6 +152,7 @@ net.atos.tfc.message.hub.ISIS.Request.permanent.failure.queue=jms:queue:ISIS_Req
 net.atos.tfc.message.hub.ISIS.Request.permanent.failure.redelivery.max=24
 net.atos.tfc.message.hub.ISIS.Request.permanent.failure.redelivery.delay=300000
 net.atos.tfc.message.hub.ISIS.Request.version=1
+audit.enabled=Y
 
 
 
