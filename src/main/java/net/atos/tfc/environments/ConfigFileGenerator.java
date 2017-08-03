@@ -17,7 +17,7 @@ import static java.lang.String.format;
 
 public class ConfigFileGenerator {
 
-    private static final File BASE_DIR = new File("target/potential-config");
+    private static final File BASE_DIR = new File("src/main/resources");
     private static final File TEMPLATE_DIR = new File("templates/external-config");
 
     private static Logger LOG = LoggerFactory.getLogger(ConfigFileGenerator.class);
