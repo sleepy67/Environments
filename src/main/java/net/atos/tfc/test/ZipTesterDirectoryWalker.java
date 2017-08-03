@@ -1,3 +1,5 @@
+package net.atos.tfc.test;
+
 import difflib.Delta;
 import difflib.DiffUtils;
 import difflib.Patch;
@@ -84,10 +86,10 @@ public class ZipTesterDirectoryWalker extends DirectoryWalker {
             System.out.println();
 
             String environmentName = substringBetween(file.getPath(), "/", "/");
-            String applicationName = removeEnd(substringBefore(file.getName(), "-2.5"), "-config");
+            String applicationName = removeEnd(substringBefore(file.getName(), "-2"), "-config");
             String version = removeEnd(substringAfter(file.getName(), "-2"), ".zip");
 
-            File newZip = new File(format("target/generated-config/%s/%s-2%s.zip", environmentName, applicationName, version));
+            File newZip = new File(format("target/generated-config/%s/%s-config-2%s.zip", environmentName, applicationName, version));
 
 //            checkNewFileExists(newZip);
 
